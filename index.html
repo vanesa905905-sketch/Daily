@@ -3,242 +3,210 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0d1117">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>非工作时段 · 个人平台</title>
+<meta name="apple-mobile-web-app-title" content="非工作时段">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icon.png"><link rel="icon" href="icon.png">
+<title>非工作时段</title>
 <style>
 :root{
-  --bg:#0d1117; --bg2:#141b24; --card:#171f29; --card2:#1d2733;
-  --line:#26313f; --line2:#334255;
-  --tx:#e8edf3; --tx2:#9fb0c3; --tx3:#6b7f96;
-  --ac:#f0a04b; --ac2:#ffd08a; --ok:#5ec4a0; --hi:#6aa9f0; --warn:#e87f6b;
-  --r:14px; --sh:0 4px 20px rgba(0,0,0,.35);
+  --bg:#f6f7f9; --card:#ffffff; --card2:#f1f3f7; --soft:#fbfcfd;
+  --line:#e4e8ef; --line2:#cfd6e0;
+  --tx:#1b2432; --tx2:#5d6b7e; --tx3:#8d99a9;
+  --ac:#d97528; --ac2:#b45f18; --acbg:#fdf3e9;
+  --hi:#2b6cb8; --hibg:#eaf1fa; --ok:#17916a; --okbg:#e7f6f0;
+  --warn:#c4462f; --warnbg:#fbecea; --mid:#b8860b; --midbg:#fdf6e0;
+  --r:14px; --sh:0 1px 2px rgba(20,30,50,.05),0 4px 14px rgba(20,30,50,.05);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
-body{
-  background:var(--bg); color:var(--tx); font-size:15px; line-height:1.65;
-  font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
-  padding-bottom:calc(74px + env(safe-area-inset-bottom));
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:960px;margin:0 auto;padding:0 16px}
-h1,h2,h3,h4{margin:0;font-weight:650;line-height:1.35}
+body{background:var(--bg);color:var(--tx);font-size:15px;line-height:1.65;
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+ padding-bottom:calc(74px + env(safe-area-inset-bottom));-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+h1,h2,h3,h4{margin:0;font-weight:660;line-height:1.35}
 a{color:var(--hi);text-decoration:none}
 button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;cursor:pointer}
-
-/* ---------- header ---------- */
-header{position:sticky;top:0;z-index:40;background:rgba(13,17,23,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.hd{display:flex;align-items:center;gap:12px;padding:14px 0 12px}
-.hd .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,var(--ac),#c96a2e);display:grid;place-items:center;font-weight:800;font-size:15px;color:#231404;flex:0 0 auto}
-.hd .t{font-size:16px;font-weight:680;letter-spacing:.2px}
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:12px;padding:13px 0}
+.hd .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(140deg,#eb9a4e,#c9631f);display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;flex:0 0 auto}
+.hd .t{font-size:16px;font-weight:680}
 .hd .d{font-size:12px;color:var(--tx3);margin-top:1px}
 .hd .sp{flex:1}
-.day-badge{font-size:11px;color:var(--ac2);border:1px solid rgba(240,160,75,.32);background:rgba(240,160,75,.09);padding:4px 10px;border-radius:999px;white-space:nowrap}
-
-/* ---------- nav ---------- */
-nav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(20,27,36,.96);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
-nav .in{display:flex;max-width:960px;margin:0 auto}
-nav button{flex:1;padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--tx3);transition:color .15s}
+.badge{font-size:11px;color:var(--ac2);border:1px solid #f0d9be;background:var(--acbg);padding:4px 10px;border-radius:999px;white-space:nowrap}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav .in{display:flex;max-width:1000px;margin:0 auto}
+nav button{flex:1;padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--tx3)}
 nav button .ic{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-nav button span{font-size:10.5px;letter-spacing:.3px}
+nav button span{font-size:10.5px}
 nav button.on{color:var(--ac)}
-
-/* ---------- generic ---------- */
-.view{display:none;padding-top:18px;animation:fade .28s ease}
+.view{display:none;padding-top:18px;animation:fade .25s ease}
 .view.on{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
-.card.tap{cursor:pointer;transition:border-color .18s,transform .18s}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px;box-shadow:var(--sh)}
+.card.tap{cursor:pointer;transition:transform .16s,box-shadow .16s}
 .card.tap:active{transform:scale(.995)}
-.card.tap:hover{border-color:var(--line2)}
-.eyebrow{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--tx3);font-weight:600;margin-bottom:8px}
-.sec-t{font-size:13px;font-weight:650;color:var(--tx2);margin:22px 0 10px;letter-spacing:.4px;display:flex;align-items:center;gap:8px}
+.eyebrow{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--tx3);font-weight:640;margin-bottom:8px}
+.sec-t{font-size:13px;font-weight:660;color:var(--tx2);margin:24px 0 11px;letter-spacing:.3px;display:flex;align-items:center;gap:9px}
 .sec-t::after{content:"";flex:1;height:1px;background:var(--line)}
-.muted{color:var(--tx2)}
-.small{font-size:13px}
-.tiny{font-size:12px;color:var(--tx3)}
-.chip{display:inline-block;font-size:11px;padding:3px 9px;border-radius:999px;background:var(--card2);color:var(--tx2);border:1px solid var(--line)}
-.chip.ac{color:var(--ac2);border-color:rgba(240,160,75,.3);background:rgba(240,160,75,.1)}
-.chip.ok{color:var(--ok);border-color:rgba(94,196,160,.3);background:rgba(94,196,160,.1)}
-.chip.hi{color:var(--hi);border-color:rgba(106,169,240,.3);background:rgba(106,169,240,.1)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 16px;border-radius:11px;background:var(--card2);border:1px solid var(--line2);font-size:14px;font-weight:550;transition:background .15s;white-space:nowrap}
+.muted{color:var(--tx2)}.small{font-size:13.5px}.tiny{font-size:12px;color:var(--tx3)}
+.chip{display:inline-block;font-size:11.5px;padding:3px 9px;border-radius:999px;background:var(--card2);color:var(--tx2);border:1px solid var(--line)}
+.chip.ac{color:var(--ac2);border-color:#f0d9be;background:var(--acbg)}
+.chip.ok{color:var(--ok);border-color:#bfe6d6;background:var(--okbg)}
+.chip.hi{color:var(--hi);border-color:#c8dcf3;background:var(--hibg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 16px;border-radius:11px;background:var(--card);border:1px solid var(--line2);font-size:14px;font-weight:560;white-space:nowrap;transition:background .15s}
 .btn svg{width:16px;height:16px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.btn:active{background:var(--line)}
-.btn.pri{background:linear-gradient(140deg,var(--ac),#d9812f);color:#231404;border-color:transparent;font-weight:680}
+.btn:active{background:var(--card2)}
+.btn.pri{background:linear-gradient(140deg,#e9883b,#cf6a20);color:#fff;border-color:transparent;font-weight:660}
 .btn.full{width:100%}
 .row{display:flex;gap:9px;flex-wrap:wrap}
 .scroller{display:flex;gap:8px;overflow-x:auto;padding:2px 16px 10px;margin:0 -16px;scrollbar-width:none}
 .scroller::-webkit-scrollbar{display:none}
-.pill{flex:0 0 auto;padding:7px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--tx2);white-space:nowrap;transition:.15s}
-.pill.on{background:rgba(240,160,75,.13);border-color:rgba(240,160,75,.4);color:var(--ac2);font-weight:600}
-
-/* ---------- today ---------- */
-.hero{background:linear-gradient(155deg,#1b2836,#151d27);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}
-.hero .k{font-size:12px;color:var(--ac2);letter-spacing:1.2px;text-transform:uppercase;font-weight:650}
+.pill{flex:0 0 auto;padding:7px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;color:var(--tx2);white-space:nowrap}
+.pill.on{background:var(--acbg);border-color:#eab98a;color:var(--ac2);font-weight:620}
+.hero{background:linear-gradient(150deg,#fff6ec,#ffffff 70%);border:1px solid #f2e2d0;border-radius:18px;padding:20px;margin-bottom:16px;box-shadow:var(--sh)}
+.hero .k{font-size:12px;color:var(--ac2);letter-spacing:1.1px;text-transform:uppercase;font-weight:660}
 .hero h2{font-size:23px;margin:8px 0 6px}
 .hero p{margin:0;color:var(--tx2);font-size:14px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 4px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center}
-.stat b{display:block;font-size:21px;font-weight:700;color:var(--ac2);line-height:1.2}
-.stat span{font-size:11px;color:var(--tx3)}
-
-/* ---------- english ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:16px 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 6px;text-align:center}
+.stat b{display:block;font-size:20px;font-weight:720;color:var(--ac2);line-height:1.2}
+.stat span{font-size:10.5px;color:var(--tx3)}
+/* english */
 .grp{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden;background:var(--card)}
-.grp>summary{padding:13px 15px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;font-weight:600;font-size:14px}
+.grp>summary{padding:13px 15px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;font-weight:620;font-size:14px}
 .grp>summary::-webkit-details-marker{display:none}
 .grp>summary::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ac);flex:0 0 auto}
 .grp>summary .n{margin-left:auto;font-size:11px;color:var(--tx3);font-weight:400}
 .words{padding:0 8px 8px}
-.w{display:flex;align-items:center;gap:10px;padding:9px 8px;border-radius:9px;border-top:1px solid var(--line)}
-.w:hover{background:rgba(255,255,255,.02)}
-.w .en{font-weight:600;font-size:14.5px;letter-spacing:.1px}
-.w .zh{font-size:13px;color:var(--tx2);margin-top:1px}
+.w{display:flex;align-items:center;gap:10px;padding:9px 8px;border-top:1px solid var(--line)}
+.w .en{font-weight:620;font-size:14.5px}.w .zh{font-size:13px;color:var(--tx2);margin-top:1px}
 .w .sp{flex:1;min-width:0}
-.ib{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto;border:1px solid var(--line);color:var(--tx3);transition:.15s}
-.ib:active{background:var(--card2)}
+.ib{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto;border:1px solid var(--line);color:var(--tx3)}
 .ib svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.ib.star.on{color:var(--ac);border-color:rgba(240,160,75,.4);background:rgba(240,160,75,.1)}
+.ib.star.on{color:var(--ac);border-color:#eab98a;background:var(--acbg)}
 .ib.star.on svg{fill:currentColor}
 .ph{padding:12px 14px;border-top:1px solid var(--line)}
 .ph:first-child{border-top:none}
-.ph .en{font-weight:600;font-size:14.5px}
-.ph .zh{font-size:13px;color:var(--tx2);margin-top:3px}
-.ph .nt{font-size:12px;color:var(--ac2);margin-top:5px;opacity:.85}
+.ph .en{font-weight:620;font-size:14.5px}.ph .zh{font-size:13px;color:var(--tx2);margin-top:3px}
+.ph .nt{font-size:12px;color:var(--ac2);margin-top:5px}
 .ph .hd2{display:flex;gap:10px;align-items:flex-start}
-
-/* ---------- quiz ---------- */
-.qbox{text-align:center;padding:8px 0}
-.qq{font-size:26px;font-weight:680;margin:14px 0 22px;line-height:1.4}
-.opt{display:block;width:100%;text-align:left;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);margin-bottom:9px;font-size:15px;transition:.15s}
-.opt:active{background:var(--card2)}
-.opt.right{border-color:var(--ok);background:rgba(94,196,160,.12)}
-.opt.wrong{border-color:var(--warn);background:rgba(232,127,107,.12)}
-.prog{height:4px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:6px}
+/* study */
+.sc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 22px;min-height:290px;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:var(--sh);margin-bottom:14px}
+.sc .kind{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--tx3);font-weight:640;margin-bottom:14px}
+.sc .front{font-size:27px;font-weight:700;line-height:1.35;word-break:break-word}
+.sc .front.long{font-size:21px}
+.sc .back{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line2)}
+.sc .back .zh{font-size:19px;font-weight:600}
+.sc .back .nt{font-size:13px;color:var(--ac2);margin-top:8px}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.grade button{padding:14px 6px;border-radius:12px;border:1px solid var(--line2);font-weight:620;font-size:14px;background:var(--card)}
+.grade .no{color:var(--warn);border-color:#eec4bb;background:var(--warnbg)}
+.grade .mid{color:var(--mid);border-color:#ecdca6;background:var(--midbg)}
+.grade .yes{color:var(--ok);border-color:#bfe6d6;background:var(--okbg)}
+.prog{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:7px}
 .prog i{display:block;height:100%;background:var(--ac);transition:width .3s}
-
-/* ---------- globe ---------- */
-#globeWrap{position:relative;width:100%;aspect-ratio:1;max-width:460px;margin:0 auto 6px;touch-action:none}
-#globe{width:100%;height:100%;display:block;cursor:grab}
-#globe:active{cursor:grabbing}
-.ghint{text-align:center;font-size:12px;color:var(--tx3);margin-bottom:12px}
-
-/* ---------- country ---------- */
-.cflag{font-size:40px;line-height:1}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:9px;margin:14px 0}
+.bar{display:flex;height:9px;border-radius:99px;overflow:hidden;background:var(--line);margin:10px 0}
+.bar i{display:block;height:100%}
+.opt{display:block;width:100%;text-align:left;padding:14px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);margin-bottom:9px;font-size:15px}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--warn);background:var(--warnbg)}
+.inp{width:100%;padding:13px 14px;border-radius:11px;border:1px solid var(--line2);font-size:16px;background:var(--card);color:var(--tx)}
+/* map */
+#mapWrap{position:relative;background:#eaf0f6;border:1px solid var(--line);border-radius:14px;overflow:hidden;touch-action:none;margin-bottom:10px}
+#map{width:100%;display:block;cursor:grab}
+.mctl{position:absolute;right:9px;bottom:9px;display:flex;flex-direction:column;gap:6px}
+.mctl button{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.94);border:1px solid var(--line2);font-size:18px;font-weight:600;line-height:1;display:grid;place-items:center;box-shadow:var(--sh)}
+.mtip{position:absolute;left:9px;top:9px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:9px;padding:5px 10px;font-size:12.5px;font-weight:600;pointer-events:none;opacity:0;transition:opacity .15s}
+.mtip.on{opacity:1}
+/* country */
+.cflag{font-size:38px;line-height:1}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:9px;margin:14px 0 0}
 .fact{background:var(--card2);border-radius:10px;padding:10px 12px}
-.fact b{display:block;font-size:10.5px;color:var(--tx3);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:3px}
+.fact b{display:block;font-size:10.5px;color:var(--tx3);text-transform:uppercase;letter-spacing:.7px;font-weight:640;margin-bottom:3px}
 .fact span{font-size:13.5px}
-.ccards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:11px;margin-top:12px}
-.ccards.tight{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
-.cc{background:var(--card2);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-.cc .img{height:118px;background:linear-gradient(135deg,#243141,#1a2430);position:relative;overflow:hidden;display:grid;place-items:center}
+.ccards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:11px}
+.ccards.tight{grid-template-columns:repeat(auto-fill,minmax(142px,1fr));gap:9px}
+.cc{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--sh)}
+.cc .img{height:112px;background:linear-gradient(135deg,#eef2f7,#e3e9f1);display:grid;place-items:center;overflow:hidden}
 .cc .img img{width:100%;height:100%;object-fit:cover;display:block}
 .cc .img .ph2{font-size:11px;color:var(--tx3);letter-spacing:.5px}
 .cc .bd{padding:11px 12px}
-.cc .tp{font-size:10.5px;color:var(--ac2);letter-spacing:1px;font-weight:650;text-transform:uppercase}
+.cc .tp{font-size:10.5px;color:var(--ac2);letter-spacing:.9px;font-weight:660;text-transform:uppercase}
 .cc h4{font-size:14.5px;margin:4px 0 5px}
 .cc p{margin:0;font-size:12.5px;color:var(--tx2);line-height:1.55}
-
-/* ---------- retail ---------- */
-.ri{border-left:2px solid var(--line2);padding:2px 0 2px 14px;margin-bottom:18px}
-.ri h4{font-size:15px;margin-bottom:6px}
-.ri p{margin:0 0 8px;font-size:13.5px;color:var(--tx2)}
-.take{background:rgba(240,160,75,.07);border:1px solid rgba(240,160,75,.2);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ac2);margin-bottom:8px}
-.take b{font-weight:650}
-
-/* ---------- misc ---------- */
-.empty{text-align:center;padding:40px 20px;color:var(--tx3);font-size:14px}
+.tl{position:relative;padding-left:20px}
+.tl::before{content:"";position:absolute;left:5px;top:5px;bottom:5px;width:2px;background:var(--line)}
+.tl .ev{position:relative;margin-bottom:15px}
+.tl .ev::before{content:"";position:absolute;left:-18px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--ac);border:2px solid var(--card)}
+.tl .y{font-size:12px;font-weight:700;color:var(--ac2);letter-spacing:.4px}
+.tl .x{font-size:13.5px;color:var(--tx2);margin-top:2px}
+.adm{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:7px}
+.adm div{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:7px 10px;background:var(--card2);border-radius:8px}
+.adm div span:last-child{color:var(--tx3);flex:0 0 auto}
+.iss{border-left:3px solid #eec4bb;padding:1px 0 1px 12px;margin-bottom:13px}
+.iss h4{font-size:14.5px}.iss p{margin:3px 0 0;font-size:13.5px;color:var(--tx2)}
+.spot{padding:10px 0;border-top:1px solid var(--line)}
+.spot:first-child{border-top:none}
+.spot b{font-size:14px}.spot p{margin:2px 0 0;font-size:13px;color:var(--tx2)}
+.route{background:var(--hibg);border:1px solid #cfe0f4;border-radius:11px;padding:12px;margin-bottom:9px}
+.route b{font-size:14px;color:var(--hi)}.route p{margin:4px 0 0;font-size:13px;color:var(--tx2)}
+.ri{border-left:3px solid var(--line2);padding:2px 0 2px 13px;margin-bottom:18px}
+.ri h4{font-size:15px;margin-bottom:6px}.ri p{margin:0 0 8px;font-size:13.5px;color:var(--tx2)}
+.take{background:var(--acbg);border:1px solid #f0dcc4;border-radius:10px;padding:10px 12px;font-size:13px;color:var(--ac2);margin-bottom:8px}
 .back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--tx2);margin-bottom:14px}
-@media(min-width:720px){
-  body{font-size:15.5px}
-  .hd{padding:18px 0 16px}
-  .view{padding-top:24px}
-}
+.empty{text-align:center;padding:38px 20px;color:var(--tx3);font-size:14px}
+.spin{width:26px;height:26px;border:2.5px solid var(--line);border-top-color:var(--ac);border-radius:50%;margin:30px auto;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(min-width:720px){.hd{padding:17px 0}.view{padding-top:24px}.stats{gap:11px}}
 </style>
-<meta name="robots" content="noindex,nofollow,noarchive">
-<meta name="apple-mobile-web-app-title" content="非工作时段">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="icon.png">
-<link rel="icon" href="icon.png">
 </head>
 <body>
-
 <header><div class="wrap hd">
   <div class="logo">非</div>
   <div><div class="t">非工作时段</div><div class="d" id="hdDate"></div></div>
-  <div class="sp"></div>
-  <div class="day-badge" id="hdBadge">第 1 天</div>
+  <div class="sp"></div><div class="badge" id="hdBadge"></div>
 </div></header>
-
 <main class="wrap">
-
-<!-- ============ TODAY ============ -->
 <section class="view on" id="v-today">
-  <div class="hero">
-    <div class="k">今日推送</div>
-    <h2 id="tdTitle">—</h2>
-    <p id="tdSub">—</p>
-  </div>
+  <div class="hero"><div class="k">今日推送</div><h2 id="tdTitle">—</h2><p id="tdSub">—</p></div>
   <div class="stats">
-    <div class="stat"><b id="stWords">0</b><span>生词本</span></div>
-    <div class="stat"><b id="stDue">0</b><span>今日待复习</span></div>
-    <div class="stat"><b id="stDone">0</b><span>已学场景</span></div>
+    <div class="stat"><b id="stNew">0</b><span>今日新学</span></div>
+    <div class="stat"><b id="stDue">0</b><span>待复习</span></div>
+    <div class="stat"><b id="stKnown">0</b><span>已掌握</span></div>
+    <div class="stat"><b id="stWeak">0</b><span>薄弱</span></div>
   </div>
-
-  <div class="sec-t">今日英语场景</div>
-  <div class="card tap" id="tdScene"></div>
-
-  <div class="sec-t">今日国家</div>
-  <div class="card tap" id="tdGeo"></div>
-
-  <div class="sec-t" id="tdRetailHd">零售速览</div>
-  <div id="tdRetail"></div>
-
-  <div class="row" style="margin-top:18px">
-    <button class="btn pri full" onclick="startQuiz('due')">开始今日复习</button>
-  </div>
-  <div class="tiny" style="text-align:center;margin-top:14px;padding-bottom:10px">
-    内容按日期自动轮播 · 零售板块由每日任务更新
-  </div>
+  <div class="sec-t">今日英语单元</div><div id="tdScene"></div>
+  <div class="sec-t">今日国家</div><div class="card tap" id="tdGeo"></div>
+  <div class="sec-t" id="tdRetailHd">零售速览</div><div id="tdRetail"></div>
 </section>
-
-<!-- ============ ENGLISH ============ -->
-<section class="view" id="v-en">
-  <div class="scroller" id="enPills"></div>
-  <div id="enBody"></div>
-</section>
-
-<!-- ============ WORLD ============ -->
+<section class="view" id="v-en"><div class="scroller" id="enPills"></div><div id="enBody"></div></section>
+<section class="view" id="v-study"><div id="studyBody"></div></section>
 <section class="view" id="v-geo">
   <div id="geoList">
-    <div id="globeWrap"><canvas id="globe"></canvas></div>
-    <div class="ghint">拖动旋转地球 · 点击亮点查看国家</div>
+    <div id="mapWrap"><canvas id="map"></canvas>
+      <div class="mtip" id="mtip"></div>
+      <div class="mctl"><button onclick="zoomBy(1.5)">+</button><button onclick="zoomBy(.667)">−</button><button onclick="resetMap()" style="font-size:13px">⟲</button></div>
+    </div>
+    <div class="tiny" style="text-align:center;margin-bottom:12px">拖动平移 · 双指或按钮缩放 · 点击国家查看</div>
     <div class="row" style="justify-content:center;margin-bottom:14px">
       <button class="btn" onclick="showCountry(todayCountry().id)">今日国家</button>
-      <button class="btn" onclick="randomCountry()">随机一个</button>
+      <button class="btn" onclick="randomCountry()">随机</button>
     </div>
-    <div class="scroller" id="contPills"></div>
-    <div id="geoGrid"></div>
+    <div class="scroller" id="contPills"></div><div id="geoGrid"></div>
   </div>
   <div id="geoDetail" style="display:none"></div>
 </section>
-
-
-
-<!-- ============ QUIZ ============ -->
-<section class="view" id="v-quiz">
-  <div id="quizBody"></div>
-</section>
-
+<section class="view" id="v-retail"><div id="retailBody"></div></section>
 </main>
-
 <nav><div class="in">
   <button data-v="today" class="on"><svg class="ic" viewBox="0 0 24 24"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></svg><span>今日</span></button>
   <button data-v="en"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5h16M4 5v14M12 5v14"/><path d="M7 9h2M7 13h2M15 9h4M15 13h3"/></svg><span>英语</span></button>
   <button data-v="geo"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg><span>世界</span></button>
+  <button data-v="retail"><svg class="ic" viewBox="0 0 24 24"><path d="M4 8h16l-1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span>零售</span></button>
 </div></nav>
-
 <script>
 /* 英语场景内容库 · 第 1 组 */
 window.EN_SCENES = (window.EN_SCENES || []).concat([
@@ -1118,1115 +1086,574 @@ window.EN_SCENES = (window.EN_SCENES || []).concat([
 }
 ]);
 
-/* 国家内容库 · 亚洲 + 西亚 */
-window.GEO = (window.GEO || []).concat([
-{
- id:"jp", zh:"日本", en:"Japan", flag:"🇯🇵", cont:"亚洲", lat:36.2, lon:138.3,
- capital:"东京 Tokyo", pop:"约 1.23 亿", area:"37.8 万 km²", langs:"日语", cur:"日元 JPY",
- geo:"由本州、北海道、九州、四国四大岛及约 1.4 万个小岛组成的弧形列岛，位于环太平洋火山带上，全境 73% 是山地。富士山是最高峰，也是活火山。南北跨越近 3000 公里，气候从北海道的亚寒带一直延伸到冲绳的亚热带。",
- culture:"一个把「细节做到极致」写进国民性格的国家：从便利店饭团的包装设计到新干线的准点率。神道教与佛教并行，传统与极端现代化并存于同一条街上。人口老龄化与低生育率是当下最深的社会命题。",
- cards:[
-  {t:"食物", n:"寿司 Sushi", w:"Sushi", d:"江户时代作为街头快餐诞生，本是保存鱼获的手段。今天的江户前寿司讲究米饭温度、醋饭配比和鱼的熟成时间。"},
-  {t:"食物", n:"拉面 Ramen", w:"Ramen", d:"源自中国的汤面在日本演化出上百种地方流派：博多豚骨、札幌味噌、喜多方酱油。"},
-  {t:"文化", n:"侘寂 Wabi-sabi", w:"Wabi-sabi", d:"接受不完美、无常与残缺的审美观。一只有裂痕的茶碗用金缮修补后反而更被珍视。"},
-  {t:"名人", n:"宫崎骏", w:"Hayao Miyazaki", d:"吉卜力工作室灵魂人物，用手绘动画构建了《龙猫》《千与千寻》等世代共同记忆。"},
-  {t:"建筑", n:"伏见稻荷大社", w:"Fushimi Inari-taisha", d:"京都山间上万座朱红鸟居连成隧道，每一座都由信众捐建，刻着捐赠者姓名。"},
-  {t:"自然", n:"富士山", w:"Mount Fuji", d:"标高 3776 米的完美圆锥形火山，上一次喷发是 1707 年。攀登季只有夏季两个月。"},
-  {t:"影视", n:"《千与千寻》", w:"Spirited Away", d:"2001 年上映，首部拿下奥斯卡最佳动画长片的非英语作品，汤屋原型取自道后温泉一带。"}
- ],
- videos:[["日本旅行纪录片","Japan travel documentary"],["日本饮食文化","Japanese food culture documentary"]],
- fact:"日本有超过 500 万台自动贩卖机，密度全球第一——平均每 23 人就有一台。"
-},
-{
- id:"kr", zh:"韩国", en:"South Korea", flag:"🇰🇷", cont:"亚洲", lat:36.5, lon:127.9,
- capital:"首尔 Seoul", pop:"约 5100 万", area:"10 万 km²", langs:"韩语", cur:"韩元 KRW",
- geo:"占据朝鲜半岛南部，70% 国土为山地，东高西低。海岸线曲折，南部与西部散布约 3400 个岛屿。四季分明，夏季受季风影响多雨。",
- culture:"从战后废墟到人均 GDP 超过 3 万美元只用了 50 年。财阀经济、超高教育竞争与全球最低生育率并存。K-pop、韩剧、韩妆构成了「韩流」这套完整的文化出口体系，也是你做零售最该盯的风向标之一。",
- cards:[
-  {t:"食物", n:"泡菜 Kimchi", w:"Kimchi", d:"越冬发酵蔬菜，家家配方不同。腌制活动「Kimjang」已列入联合国非遗。"},
-  {t:"食物", n:"韩式炸鸡", w:"Korean fried chicken", d:"二次油炸带来的脆壳配甜辣酱，与啤酒的组合「chimaek」是全民夜宵。"},
-  {t:"文化", n:"K-pop", w:"K-pop", d:"高度工业化的偶像培养体系，练习生制度、粉丝经济与周边商品共同构成产业链。"},
-  {t:"名人", n:"奉俊昊", w:"Bong Joon-ho", d:"《寄生虫》导演，2020 年横扫奥斯卡四项大奖，把阶级议题拍成了全球通用语言。"},
-  {t:"建筑", n:"景福宫", w:"Gyeongbokgung", d:"朝鲜王朝正宫，1395 年始建，历经焚毁与重建，如今仍在持续修复中。"},
-  {t:"自然", n:"济州岛", w:"Jeju Island", d:"火山岛，中央的汉拿山是韩国最高峰，岛上熔岩洞窟系统被列入世界自然遗产。"},
-  {t:"影视", n:"《鱿鱼游戏》", w:"Squid Game", d:"2021 年 Netflix 全球现象级作品，把韩国童年游戏变成了全球流行符号，也带火了大量周边商品。"}
- ],
- videos:[["首尔街头","Seoul street walk 4K"],["韩流产业解析","K-pop industry explained"]],
- fact:"韩国的便利店密度超过日本，首尔部分街区一条街上能有四家不同品牌的便利店。"
-},
-{
- id:"in", zh:"印度", en:"India", flag:"🇮🇳", cont:"亚洲", lat:20.6, lon:78.9,
- capital:"新德里 New Delhi", pop:"约 14.5 亿（全球第一）", area:"328 万 km²", langs:"印地语、英语等 22 种官方语言", cur:"卢比 INR",
- geo:"北有喜马拉雅山脉屏障，中部恒河平原养育了世界上最密集的人口，南部德干高原三面临海。西部有塔尔沙漠，东北部则是全球降雨量最高的地区之一。",
- culture:"世界上语言与宗教最多元的国家之一，也是阿联酋人口结构中最大的外籍群体来源国——你日常接触的店员、司机、同事很多来自这里。宝莱坞年产电影数量全球第一。",
- cards:[
-  {t:"食物", n:"咖喱与马萨拉", w:"Indian cuisine", d:"「咖喱」其实是外来概括词，印度本地讲的是各种 masala 香料组合，各邦差异巨大。"},
-  {t:"食物", n:"比尔亚尼 Biryani", w:"Biryani", d:"香料米饭与肉分层焖制，海得拉巴、勒克瑙等地各有流派。阿联酋餐厅里到处都能吃到。"},
-  {t:"文化", n:"排灯节 Diwali", w:"Diwali", d:"光明战胜黑暗的节日，全国点灯放烟花，也是印度零售业一年中最大的销售旺季。"},
-  {t:"名人", n:"甘地", w:"Mahatma Gandhi", d:"以非暴力不合作运动推动印度独立，其思想影响了马丁·路德·金等后世运动。"},
-  {t:"建筑", n:"泰姬陵", w:"Taj Mahal", d:"莫卧儿皇帝为亡妻所建的白色大理石陵墓，耗时 22 年，被认为是伊斯兰建筑的巅峰。"},
-  {t:"自然", n:"喀拉拉回水", w:"Kerala backwaters", d:"南部沿海错综的潟湖与运河网络，居民世代以船屋为家。"},
-  {t:"影视", n:"宝莱坞", w:"Bollywood", d:"孟买的印地语电影工业，歌舞叙事是标志，年观影人次远超好莱坞。"}
- ],
- videos:[["印度街头美食","India street food documentary"],["印度概览","India country documentary"]],
- fact:"印度的铁路系统雇佣超过 120 万人，是全球最大的雇主之一。"
-},
-{
- id:"th", zh:"泰国", en:"Thailand", flag:"🇹🇭", cont:"亚洲", lat:15.0, lon:101.0,
- capital:"曼谷 Bangkok", pop:"约 7200 万", area:"51.3 万 km²", langs:"泰语", cur:"泰铢 THB",
- geo:"形似象头的国土，北部为山地丛林，中部湄南河平原是「亚洲米仓」，南部狭长半岛两侧分别是安达曼海与泰国湾，拥有上千个热带岛屿。",
- culture:"东南亚唯一未被殖民的国家，上座部佛教深入日常——男性一生中通常会短期出家一次。「微笑之国」的称呼背后是一套讲究避免冲突的社交礼仪。",
- cards:[
-  {t:"食物", n:"冬阴功汤", w:"Tom yum", d:"酸辣虾汤，香茅、南姜、青柠叶三样香料决定了那股标志性的味道。"},
-  {t:"食物", n:"泰式炒河粉", w:"Pad thai", d:"1930 年代政府为推广米粉而推动的国民料理，今天成了泰国最著名的输出品。"},
-  {t:"文化", n:"泼水节 Songkran", w:"Songkran", d:"泰历新年，4 月中旬全国互相泼水祝福，本意是洗去过去一年的晦气。"},
-  {t:"名人", n:"阿彼察邦·韦拉斯哈古", w:"Apichatpong Weerasethakul", d:"以《能召回前世的布米叔叔》获戛纳金棕榈，作品充满热带的梦境感。"},
-  {t:"建筑", n:"玉佛寺", w:"Wat Phra Kaew", d:"曼谷大皇宫内的王室寺庙，供奉整块翡翠雕成的玉佛，泰国最神圣的场所。"},
-  {t:"自然", n:"甲米与攀牙湾", w:"Phang Nga Bay", d:"石灰岩喀斯特孤峰直插碧海，是《007》电影取景地。"},
-  {t:"影视", n:"《白莲花度假村》第三季", w:"The White Lotus", d:"2025 年在泰国取景播出，带动了当地旅游与酒店业的一波热潮。"}
- ],
- videos:[["泰国街头美食","Bangkok street food"],["泰国文化纪录片","Thailand culture documentary"]],
- fact:"曼谷的完整泰文名字有 168 个字母，是吉尼斯认证的世界最长地名。"
-},
-{
- id:"vn", zh:"越南", en:"Vietnam", flag:"🇻🇳", cont:"亚洲", lat:14.1, lon:108.3,
- capital:"河内 Hanoi", pop:"约 1.01 亿", area:"33.1 万 km²", langs:"越南语", cur:"越南盾 VND",
- geo:"沿南海岸线延伸的 S 形狭长国土，最窄处不足 50 公里。北部红河三角洲与南部湄公河三角洲是两大人口与农业中心，中间由长山山脉贯穿。",
- culture:"深受汉字文化圈影响又在近代转用拉丁字母书写。战后四十年从贫困走向全球制造业重要节点，如今是很多玩具与消费品的产能转移目的地——做采购的话值得持续关注。",
- cards:[
-  {t:"食物", n:"河粉 Phở", w:"Pho", d:"牛骨汤熬数小时，配米粉与生香草。北方清淡，南方偏甜且配料更多。"},
-  {t:"食物", n:"越式法棍 Bánh mì", w:"Bánh mì", d:"殖民时期留下的法棍与本地腌菜、香菜、肉酱结合，被视为最成功的饮食混血。"},
-  {t:"文化", n:"水上木偶戏", w:"Water puppetry", d:"起源于红河三角洲的稻田，艺人站在齐腰深的水中操纵木偶，已有近千年历史。"},
-  {t:"名人", n:"陈英雄", w:"Tran Anh Hung", d:"《青木瓜之味》导演，2023 年以《法式火锅》获戛纳最佳导演。"},
-  {t:"建筑", n:"会安古城", w:"Hội An", d:"曾经的国际贸易港，日本桥与中式会馆并存，整城灯笼是它的名片。"},
-  {t:"自然", n:"下龙湾", w:"Hạ Long Bay", d:"近 2000 座石灰岩岛屿散布海面，世界自然遗产。"},
-  {t:"影视", n:"《恋恋三季》", w:"Three Seasons", d:"1999 年圣丹斯电影节大奖作品，越战后美越合拍的重要转折点。"}
- ],
- videos:[["越南街头美食","Vietnam street food"],["河内城市漫步","Hanoi walking tour 4K"]],
- fact:"越南是全球第二大咖啡出口国，且以罗布斯塔豆为主——炼乳咖啡就是为了压住这种豆子的苦味。"
-},
-{
- id:"id", zh:"印度尼西亚", en:"Indonesia", flag:"🇮🇩", cont:"亚洲", lat:-2.5, lon:118.0,
- capital:"雅加达 Jakarta（正迁往努山塔拉）", pop:"约 2.85 亿", area:"191 万 km²", langs:"印尼语（另有 700 多种地方语言）", cur:"印尼盾 IDR",
- geo:"全球最大的群岛国家，约 1.7 万个岛屿横跨赤道 5000 公里。坐落在三大板块交汇处，拥有 130 座活火山，是全球火山最密集的国家。",
- culture:"人口全球第四、穆斯林人口全球第一，却有着极强的地方多元性——巴厘岛是印度教飞地，巴布亚有数百个部族。「Gotong royong」（互助）是社会基本伦理。",
- cards:[
-  {t:"食物", n:"仁当牛肉 Rendang", w:"Rendang", d:"米南加保族的椰浆香料炖牛肉，曾被评为世界最美味食物之一，可以保存数周。"},
-  {t:"食物", n:"沙嗲 Satay", w:"Satay", d:"炭烤肉串配花生酱，从街边小摊到宴席都有，已传播到整个东南亚。"},
-  {t:"文化", n:"蜡染 Batik", w:"Batik", d:"用蜡防染的织物工艺，不同图案对应不同场合与身份，列入联合国非遗。"},
-  {t:"名人", n:"苏加诺", w:"Sukarno", d:"印尼开国总统，万隆会议的发起者之一，推动了不结盟运动。"},
-  {t:"建筑", n:"婆罗浮屠", w:"Borobudur", d:"9 世纪的大乘佛教曼陀罗式建筑，世界最大佛寺，曾被火山灰掩埋数百年。"},
-  {t:"自然", n:"科莫多国家公园", w:"Komodo National Park", d:"科莫多巨蜥唯一的野生栖息地，也是世界级潜水点。"},
-  {t:"影视", n:"《突袭》", w:"The Raid", d:"2011 年动作片，把印尼武术 Pencak Silat 带向世界影坛。"}
- ],
- videos:[["印尼群岛纪录片","Indonesia documentary islands"],["巴厘岛文化","Bali culture documentary"]],
- fact:"印尼正在把首都从下沉的雅加达迁往加里曼丹岛的新城努山塔拉，这是本世纪最大规模的迁都工程。"
-},
-{
- id:"mn", zh:"蒙古国", en:"Mongolia", flag:"🇲🇳", cont:"亚洲", lat:46.9, lon:103.8,
- capital:"乌兰巴托 Ulaanbaatar", pop:"约 350 万", area:"156 万 km²", langs:"蒙古语", cur:"图格里克 MNT",
- geo:"全球人口密度最低的主权国家，平均海拔 1580 米。北部是森林与草原，南部是戈壁沙漠。极端大陆性气候，冬季可达零下 40 度，乌兰巴托是世界上最冷的首都。",
- culture:"游牧传统仍然活着——约三分之一人口过着半游牧生活。摔跤、赛马、射箭组成的「那达慕」是国家最重要的节庆。成吉思汗是无处不在的国家象征。",
- cards:[
-  {t:"食物", n:"包子 Buuz", w:"Buuz", d:"羊肉蒸包，春节（白月节）必备，一家人一次能包上千个冷冻备用。"},
-  {t:"食物", n:"马奶酒 Airag", w:"Airag", d:"发酵马奶，微酸带轻微酒精，夏季游牧生活的主要饮品。"},
-  {t:"文化", n:"呼麦", w:"Khoomei", d:"一人同时发出两个以上音高的喉音唱法，模仿风、水与动物的声音。"},
-  {t:"名人", n:"成吉思汗", w:"Genghis Khan", d:"13 世纪建立了历史上疆域最大的连续陆地帝国。"},
-  {t:"建筑", n:"额尔登尼召寺", w:"Erdene Zuu Monastery", d:"蒙古最古老的藏传佛教寺院，建于 1585 年，用了古都哈拉和林的石料。"},
-  {t:"自然", n:"戈壁沙漠", w:"Gobi Desert", d:"世界上最早发现恐龙蛋化石的地方，火焰崖至今仍是重要古生物遗址。"},
-  {t:"影视", n:"《哭泣的骆驼》", w:"The Story of the Weeping Camel", d:"2003 年纪录片，讲述牧民用音乐让母驼接纳幼崽，获奥斯卡提名。"}
- ],
- videos:[["蒙古游牧生活","Mongolia nomadic life documentary"],["呼麦演唱","Mongolian throat singing"]],
- fact:"蒙古的马匹数量长期超过人口数量。"
-},
-{
- id:"np", zh:"尼泊尔", en:"Nepal", flag:"🇳🇵", cont:"亚洲", lat:28.4, lon:84.1,
- capital:"加德满都 Kathmandu", pop:"约 3000 万", area:"14.7 万 km²", langs:"尼泊尔语", cur:"尼泊尔卢比 NPR",
- geo:"夹在中国与印度之间的内陆山国，从南部海拔 60 米的平原到 8848 米的珠峰只隔约 200 公里，是地球上垂直落差最剧烈的地带。全球 14 座 8000 米以上山峰中有 8 座在这里。",
- culture:"印度教与佛教在同一座庙宇里共存的国家，也是释迦牟尼的出生地。廓尔喀士兵以勇猛闻名。旗帜是全球唯一非矩形的国旗。",
- cards:[
-  {t:"食物", n:"Dal bhat", w:"Dal bhat", d:"扁豆汤配米饭与咖喱菜，登山向导常说「Dal bhat power, 24 hour」。"},
-  {t:"食物", n:"Momo", w:"Momo (food)", d:"从西藏传来的蒸饺，如今是尼泊尔全民小吃，配辣番茄蘸酱。"},
-  {t:"文化", n:"活女神 Kumari", w:"Kumari (goddess)", d:"从特定家族中选出的幼女被奉为活女神，直到初潮为止。"},
-  {t:"名人", n:"丹增·诺尔盖", w:"Tenzing Norgay", d:"1953 年与希拉里首次登顶珠峰的夏尔巴向导。"},
-  {t:"建筑", n:"博达哈大佛塔", w:"Boudhanath", d:"加德满都的巨型白色佛塔，是流亡藏人社群的宗教中心。"},
-  {t:"自然", n:"珠穆朗玛峰", w:"Mount Everest", d:"海拔 8848.86 米，尼泊尔一侧称萨迦玛塔，攀登季集中在春季。"},
-  {t:"影视", n:"《喜马拉雅》", w:"Himalaya (1999 film)", d:"在多尔波地区实地拍摄的剧情片，获奥斯卡最佳外语片提名。"}
- ],
- videos:[["尼泊尔纪录片","Nepal documentary Himalaya"],["加德满都街头","Kathmandu walking tour"]],
- fact:"尼泊尔的时区是 UTC+5:45，全球唯一使用 45 分钟偏移的国家。"
-},
-{
- id:"ae", zh:"阿拉伯联合酋长国", en:"United Arab Emirates", flag:"🇦🇪", cont:"亚洲", lat:24.0, lon:54.0,
- capital:"阿布扎比 Abu Dhabi", pop:"约 1100 万（约 88% 为外籍）", area:"8.4 万 km²", langs:"阿拉伯语（英语通用）", cur:"迪拉姆 AED",
- geo:"位于阿拉伯半岛东南，北临波斯湾。国土大部分是沙漠，鲁卜哈利沙漠边缘延伸至此，东部富查伊拉有哈杰尔山脉与印度洋海岸。夏季气温常超 45 度。",
- culture:"1971 年由七个酋长国联合建国。石油收入之后转向贸易、物流、旅游与零售——迪拜购物中心的客流量本身就是一个产业指标。世界上外籍人口占比最高的国家之一，日常英语是南亚、阿拉伯、菲律宾多种口音的混合体。",
- cards:[
-  {t:"食物", n:"Machboos", w:"Kabsa", d:"香料米饭配羊肉或鸡肉，海湾地区的家宴主菜，与沙特 Kabsa 同源。"},
-  {t:"食物", n:"Luqaimat", w:"Luqaimat", d:"炸面团球淋椰枣糖浆，斋月期间几乎每家都会做。"},
-  {t:"文化", n:"椰枣与咖啡待客", w:"Arabic coffee", d:"用小杯 gahwa 配椰枣待客是最基本的礼节，倒三分之一杯表示还会续。"},
-  {t:"名人", n:"扎耶德", w:"Zayed bin Sultan Al Nahyan", d:"阿联酋国父，推动七个酋长国联合建国并主导现代化建设。"},
-  {t:"建筑", n:"谢赫扎耶德大清真寺", w:"Sheikh Zayed Mosque", d:"阿布扎比的白色大理石清真寺，能容纳超过 4 万人，内有世界最大手工地毯。"},
-  {t:"自然", n:"利瓦绿洲与空旷之地", w:"Rub' al Khali", d:"世界最大的连续沙漠边缘，沙丘可高达 300 米。"},
-  {t:"影视", n:"沙漠取景地", w:"Star Wars: The Force Awakens", d:"阿布扎比的利瓦沙漠曾作为《星球大战：原力觉醒》的取景地。"}
- ],
- videos:[["阿联酋历史","UAE history documentary"],["迪拜城市发展","Dubai development documentary"]],
- fact:"阿联酋在 1968 年的人口约为 18 万，今天超过 1100 万——半个世纪增长了 60 倍。"
-},
-{
- id:"tr", zh:"土耳其", en:"Türkiye", flag:"🇹🇷", cont:"亚洲/欧洲", lat:39.0, lon:35.2,
- capital:"安卡拉 Ankara", pop:"约 8600 万", area:"78.4 万 km²", langs:"土耳其语", cur:"里拉 TRY",
- geo:"横跨欧亚两洲，博斯普鲁斯海峡把伊斯坦布尔分成两半。安纳托利亚高原占据国土主体，东部有海拔 5137 米的亚拉腊山。地处三大板块交界，地震频发。",
- culture:"拜占庭与奥斯曼两大帝国的遗产叠加于同一片土地。世俗化的共和国传统与伊斯兰文化持续对话。土耳其也是全球重要的家纺、玩具与礼品制造与转口地。",
- cards:[
-  {t:"食物", n:"烤肉 Kebab", w:"Kebab", n2:"", d:"从旋转烤肉 döner 到阿达纳辣肉串，各地流派差异极大。"},
-  {t:"食物", n:"土耳其早餐", w:"Turkish breakfast", d:"十几个小碟铺满桌面：橄榄、奶酪、番茄、蜂蜜配凝脂奶油，能吃一上午。"},
-  {t:"文化", n:"土耳其咖啡与占卜", w:"Turkish coffee", d:"细粉煮制不过滤，喝完把杯子倒扣，用残渣的纹路占卜——已列入非遗。"},
-  {t:"名人", n:"奥尔罕·帕慕克", w:"Orhan Pamuk", d:"2006 年诺贝尔文学奖得主，《我的名字叫红》写尽伊斯坦布尔的忧伤。"},
-  {t:"建筑", n:"圣索菲亚大教堂", w:"Hagia Sophia", d:"公元 537 年建成，先后是东正教堂、清真寺、博物馆，2020 年重新作为清真寺开放。"},
-  {t:"自然", n:"卡帕多西亚", w:"Cappadocia", d:"火山凝灰岩被侵蚀成「精灵烟囱」，地下还有可容纳数千人的古代城市。"},
-  {t:"影视", n:"《冬眠》", w:"Winter Sleep", d:"锡兰导演作品，2014 年戛纳金棕榈，在卡帕多西亚的洞穴旅馆里拍完了三个多小时的对话。"}
- ],
- videos:[["伊斯坦布尔纪录片","Istanbul documentary"],["卡帕多西亚","Cappadocia documentary"]],
- fact:"伊斯坦布尔是世界上唯一横跨两大洲的大城市，很多人每天通勤都要跨洲。"
-},
-{
- id:"ir", zh:"伊朗", en:"Iran", flag:"🇮🇷", cont:"亚洲", lat:32.4, lon:53.7,
- capital:"德黑兰 Tehran", pop:"约 9000 万", area:"164.8 万 km²", langs:"波斯语", cur:"里亚尔 IRR",
- geo:"以伊朗高原为主体，四周被扎格罗斯山与厄尔布尔士山环抱，中部是两大盐漠。北临里海，南接波斯湾与霍尔木兹海峡——全球约五分之一的石油从这里通过。",
- culture:"波斯文明有超过 2500 年的连续书写传统，诗歌在日常生活中的地位极高——哈菲兹的诗集几乎每家都有。诺鲁孜新年（春分）是全民节日，中亚多国共享。",
- cards:[
-  {t:"食物", n:"藏红花米饭 Chelow", w:"Persian cuisine", d:"波斯菜讲究酸甜平衡，锅巴 tahdig 是全家争抢的部分。"},
-  {t:"食物", n:"Fesenjan", w:"Fesenjān", d:"核桃与石榴糖浆炖禽肉，酸甜浓稠，是最具代表性的波斯宴席菜。"},
-  {t:"文化", n:"波斯地毯", w:"Persian carpet", d:"每平方厘米的打结数决定等级，图案承载着地区、部落与家族的标记。"},
-  {t:"名人", n:"阿巴斯·基亚罗斯塔米", w:"Abbas Kiarostami", d:"《樱桃的滋味》获戛纳金棕榈，用极简手法把伊朗电影带向世界。"},
-  {t:"建筑", n:"伊玛目广场", w:"Naqsh-e Jahan Square", d:"伊斯法罕的巨型广场，四周环绕清真寺与集市，蓝色琉璃穹顶是波斯建筑的顶点。"},
-  {t:"自然", n:"卢特沙漠", w:"Lut Desert", d:"曾测得地表 70.7℃，是地球记录到的最高地表温度。"},
-  {t:"影视", n:"《一次别离》", w:"A Separation", d:"2011 年作品，获奥斯卡最佳外语片，把家庭与阶级困境拍得极其克制。"}
- ],
- videos:[["伊朗纪录片","Iran travel documentary"],["波斯建筑","Persian architecture documentary"]],
- fact:"伊斯法罕在 17 世纪有句谚语：「伊斯法罕半天下」——形容它当时的繁华。"
-}
-]);
-
-/* 国家内容库 · 欧洲 + 非洲 */
-window.GEO = (window.GEO || []).concat([
-{
- id:"it", zh:"意大利", en:"Italy", flag:"🇮🇹", cont:"欧洲", lat:41.9, lon:12.6,
- capital:"罗马 Rome", pop:"约 5900 万", area:"30.2 万 km²", langs:"意大利语", cur:"欧元 EUR",
- geo:"靴形半岛伸入地中海，阿尔卑斯山构成北部屏障，亚平宁山脉纵贯全境。有维苏威、埃特纳两座著名活火山，西西里与撒丁是两大岛屿。",
- culture:"世界文化遗产数量全球第一。地区认同强于国家认同——一个那不勒斯人和一个米兰人的饮食、方言、性格差异极大。设计与手工业传统深厚，从家具到文具都是全球标杆。",
- cards:[
-  {t:"食物", n:"披萨 Pizza", w:"Neapolitan pizza", d:"那不勒斯披萨有严格标准：面团发酵时间、木火炉温度、边缘厚度都被写进规程。"},
-  {t:"食物", n:"意面 Pasta", w:"Pasta", d:"超过 350 种形状，每种对应特定酱汁——形状不是装饰，是流体力学。"},
-  {t:"文化", n:"文艺复兴", w:"Italian Renaissance", d:"14–16 世纪从佛罗伦萨发端，重新定义了西方的艺术、科学与人的观念。"},
-  {t:"名人", n:"达·芬奇", w:"Leonardo da Vinci", d:"画家、解剖学家、工程师，留下的手稿里有直升机与坦克的草图。"},
-  {t:"建筑", n:"罗马斗兽场", w:"Colosseum", d:"公元 80 年落成，可容纳 5 万观众，地下有复杂的升降机关。"},
-  {t:"自然", n:"多洛米蒂山", w:"Dolomites", d:"淡粉色的石灰岩尖峰群，日落时会呈现「Enrosadira」的玫瑰色光。"},
-  {t:"影视", n:"《天堂电影院》", w:"Cinema Paradiso", d:"1988 年西西里小镇的电影院故事，配乐由莫里康内完成。"}
- ],
- videos:[["意大利纪录片","Italy documentary history"],["意大利美食","Italian food documentary"]],
- fact:"意大利人均咖啡吧数量极高，站着喝一杯 espresso 通常只要一欧多，坐下就贵一倍。"
-},
-{
- id:"es", zh:"西班牙", en:"Spain", flag:"🇪🇸", cont:"欧洲", lat:40.4, lon:-3.7,
- capital:"马德里 Madrid", pop:"约 4800 万", area:"50.6 万 km²", langs:"西班牙语（另有加泰罗尼亚语、巴斯克语等）", cur:"欧元 EUR",
- geo:"占据伊比利亚半岛主体，中部是平均海拔 600 米的梅塞塔高原。比利牛斯山隔开法国，南部隔直布罗陀海峡与非洲相望，最近处仅 14 公里。",
- culture:"多语言、多认同的国家：加泰罗尼亚、巴斯克、加利西亚都有自己的语言与强烈的地方意识。晚餐从九点开始，午休传统仍在部分地区保留。",
- cards:[
-  {t:"食物", n:"海鲜饭 Paella", w:"Paella", d:"起源于瓦伦西亚的农民菜，正宗版本用兔肉和蜗牛，海鲜版是后来的沿海变体。"},
-  {t:"食物", n:"Tapas", w:"Tapas", d:"不是一道菜而是一种吃法：小份、边喝边吃、换店续摊。"},
-  {t:"文化", n:"弗拉门戈", w:"Flamenco", d:"安达卢西亚的吉普赛、摩尔与犹太文化混血产物，由歌、舞、吉他三部分构成。"},
-  {t:"名人", n:"高迪", w:"Antoni Gaudí", d:"把自然结构转译成建筑语言的加泰罗尼亚建筑师，作品几乎没有直线。"},
-  {t:"建筑", n:"圣家堂", w:"Sagrada Família", d:"1882 年动工至今仍未完工，高迪生前只完成了不到四分之一。"},
-  {t:"自然", n:"加那利群岛", w:"Canary Islands", d:"大西洋上的火山群岛，泰德峰是西班牙最高点，也是全球最佳观星地之一。"},
-  {t:"影视", n:"阿莫多瓦作品", w:"Pedro Almodóvar", d:"用浓烈的色彩和女性群像重塑了西班牙电影的国际形象。"}
- ],
- videos:[["西班牙纪录片","Spain documentary"],["弗拉门戈表演","Flamenco performance"]],
- fact:"西班牙的国歌没有官方歌词——过去一百多年多次尝试填词都以失败告终。"
-},
-{
- id:"fr", zh:"法国", en:"France", flag:"🇫🇷", cont:"欧洲", lat:46.6, lon:2.2,
- capital:"巴黎 Paris", pop:"约 6800 万", area:"55.2 万 km²（含海外领地更大）", langs:"法语", cur:"欧元 EUR",
- geo:"西欧面积最大的国家，被称为「六边形」。西临大西洋、南接地中海、东有阿尔卑斯与勃朗峰（4808 米）。海外领地遍布三大洋，使法国拥有全球第二大专属经济区。",
- culture:"把「文化例外」写进贸易谈判的国家：电影、图书、饮食都有政策保护。全球游客最多的国家，也是奢侈品与授权 IP 商品的重要市场。",
- cards:[
-  {t:"食物", n:"法棍与奶酪", w:"Baguette", d:"法棍的成分与工艺受法律规定，制作技艺已列入联合国非遗。法国有超过 1000 种奶酪。"},
-  {t:"食物", n:"可颂 Croissant", w:"Croissant", d:"其实源自奥地利的 kipferl，19 世纪传入巴黎后才变成今天的黄油千层版本。"},
-  {t:"文化", n:"咖啡馆文化", w:"Café culture", d:"从萨特到波伏娃，巴黎咖啡馆长期扮演知识分子的公共客厅。"},
-  {t:"名人", n:"玛丽·居里", w:"Marie Curie", d:"首位获诺贝尔奖的女性，也是唯一在两个不同科学领域获奖的人。"},
-  {t:"建筑", n:"埃菲尔铁塔", w:"Eiffel Tower", d:"1889 年世博会的临时建筑，当时被艺术界联名抗议，如今成了国家符号。"},
-  {t:"自然", n:"普罗旺斯薰衣草田", w:"Provence", d:"六月底到七月中开花，瓦朗索勒高原是最著名的花海。"},
-  {t:"影视", n:"《天使爱美丽》", w:"Amélie", d:"2001 年电影，把蒙马特区拍成了全球观众心中的巴黎滤镜。"}
- ],
- videos:[["法国纪录片","France documentary history"],["巴黎漫步","Paris walking tour 4K"]],
- fact:"法国是全球唯一在超市禁止丢弃未售出可食用食品的国家之一，超市必须捐赠。"
-},
-{
- id:"de", zh:"德国", en:"Germany", flag:"🇩🇪", cont:"欧洲", lat:51.2, lon:10.5,
- capital:"柏林 Berlin", pop:"约 8400 万", area:"35.8 万 km²", langs:"德语", cur:"欧元 EUR",
- geo:"北部是北海与波罗的海沿岸的低地平原，中部丘陵与森林，南部向阿尔卑斯山抬升。莱茵河、易北河、多瑙河三大水系贯穿，构成欧洲最密集的内河航运网。",
- culture:"联邦制下地区差异明显，巴伐利亚和汉堡几乎是两个世界。制造业与中小企业「隐形冠军」是经济骨架。纽伦堡玩具展是全球玩具行业最重要的年度节点，就在这里。",
- cards:[
-  {t:"食物", n:"香肠与面包", w:"German cuisine", d:"全国有 1500 多种香肠、3000 多种面包，各州都有自己的注册品种。"},
-  {t:"食物", n:"椒盐卷饼 Brezel", w:"Pretzel", d:"起源于修道院，碱水浸泡带来独特的深棕外壳与咸香。"},
-  {t:"文化", n:"圣诞市场", w:"Christmas market", d:"纽伦堡的圣婴市场可追溯到 16 世纪，也是玩具与手工艺品的传统集散地。"},
-  {t:"名人", n:"贝多芬", w:"Ludwig van Beethoven", d:"在逐渐失聪的情况下完成第九交响曲，其《欢乐颂》成为欧盟盟歌。"},
-  {t:"建筑", n:"新天鹅堡", w:"Neuschwanstein Castle", d:"路德维希二世的浪漫主义幻想产物，迪士尼城堡的灵感来源之一。"},
-  {t:"自然", n:"黑森林", w:"Black Forest", d:"因树冠茂密光线难透而得名，也是布谷鸟钟与格林童话的故乡。"},
-  {t:"影视", n:"《窃听风暴》", w:"The Lives of Others", d:"2006 年电影，讲述东德国家安全部的监听体系，获奥斯卡最佳外语片。"}
- ],
- videos:[["德国纪录片","Germany documentary"],["纽伦堡玩具展","Spielwarenmesse Nuremberg toy fair"]],
- fact:"德国有超过 2 万座城堡，平均每 40 公里就能遇到一座。"
-},
-{
- id:"no", zh:"挪威", en:"Norway", flag:"🇳🇴", cont:"欧洲", lat:60.5, lon:8.5,
- capital:"奥斯陆 Oslo", pop:"约 550 万", area:"38.5 万 km²", langs:"挪威语", cur:"挪威克朗 NOK",
- geo:"斯堪的纳维亚半岛西侧，海岸线被冰川切割出上千条峡湾，实际长度超过 10 万公里。北部深入北极圈，夏季有极昼、冬季有极夜。受北大西洋暖流影响，同纬度中气候异常温和。",
- culture:"北海石油带来的主权财富基金规模全球第一，但社会强调平等的「Janteloven」文化——不张扬、不自夸。户外生活 friluftsliv 被视为国民精神。",
- cards:[
-  {t:"食物", n:"腌三文鱼 Gravlaks", w:"Gravlax", d:"用盐、糖与莳萝腌渍的生三文鱼，名字原意是「埋起来的鲑鱼」。"},
-  {t:"食物", n:"棕奶酪 Brunost", w:"Brunost", d:"乳清熬煮至焦糖化的褐色奶酪，口感偏甜，是挪威早餐的固定项。"},
-  {t:"文化", n:"维京遗产", w:"Vikings", d:"8–11 世纪的航海扩张，长船技术让他们抵达了北美洲。"},
-  {t:"名人", n:"蒙克", w:"Edvard Munch", d:"《呐喊》的作者，表现主义的先驱，作品被多次盗窃又寻回。"},
-  {t:"建筑", n:"乌尔内斯木板教堂", w:"Urnes Stave Church", d:"12 世纪的全木结构教堂，雕刻融合了维京与基督教图案。"},
-  {t:"自然", n:"盖朗厄尔峡湾", w:"Geirangerfjord", d:"世界自然遗产，两侧悬崖高达 1400 米，瀑布直落海面。"},
-  {t:"影视", n:"《北欧犯罪剧》", w:"Nordic noir", d:"冷色调、缓慢节奏与社会批判构成的北欧犯罪类型，影响了全球剧集审美。"}
- ],
- videos:[["挪威峡湾","Norway fjords documentary"],["北极光","Northern lights Norway"]],
- fact:"挪威是全球电动车渗透率最高的国家，新车销售中纯电占比已超过九成。"
-},
-{
- id:"pl", zh:"波兰", en:"Poland", flag:"🇵🇱", cont:"欧洲", lat:51.9, lon:19.1,
- capital:"华沙 Warsaw", pop:"约 3700 万", area:"31.3 万 km²", langs:"波兰语", cur:"兹罗提 PLN",
- geo:"中欧平原国家，北临波罗的海，南界喀尔巴阡与苏台德山脉。维斯瓦河纵贯全境。地形平坦、无天然屏障，这一点深刻塑造了它的历史。",
- culture:"曾在地图上消失 123 年又重新建国。天主教影响深厚。近年成为欧洲增长最快的经济体之一，也是欧洲电商与消费品的重要新兴市场。",
- cards:[
-  {t:"食物", n:"饺子 Pierogi", w:"Pierogi", d:"半月形馅饺，甜咸皆有，土豆奶酪馅的「俄式」其实是最经典的波兰口味。"},
-  {t:"食物", n:"酸黄瓜汤", w:"Polish cuisine", d:"以发酵为核心的饮食体系：酸黄瓜、酸菜、酸黑麦汤都是冬季主力。"},
-  {t:"文化", n:"肖邦与钢琴", w:"Frédéric Chopin", d:"华沙每五年举办一次国际肖邦钢琴比赛，是全球最重要的钢琴赛事之一。"},
-  {t:"名人", n:"哥白尼", w:"Nicolaus Copernicus", d:"提出日心说，把地球从宇宙中心挪开，改变了人类的自我认知。"},
-  {t:"建筑", n:"克拉科夫老城", w:"Kraków Old Town", d:"二战中几乎未受破坏的中世纪城区，中央集市广场是欧洲最大的中世纪广场之一。"},
-  {t:"自然", n:"比亚沃维耶扎森林", w:"Białowieża Forest", d:"欧洲最后一片原始低地森林，欧洲野牛在这里被从灭绝边缘救回。"},
-  {t:"影视", n:"《修女艾达》", w:"Ida (film)", d:"2013 年黑白电影，获奥斯卡最佳外语片，用极简构图讲述战后创伤。"}
- ],
- videos:[["波兰纪录片","Poland documentary"],["克拉科夫","Krakow walking tour"]],
- fact:"华沙老城是二战后按照 18 世纪的画作一砖一瓦重建的，因此被列入世界遗产——遗产本身是「重建行为」。"
-},
-{
- id:"gr", zh:"希腊", en:"Greece", flag:"🇬🇷", cont:"欧洲", lat:39.0, lon:21.8,
- capital:"雅典 Athens", pop:"约 1040 万", area:"13.2 万 km²", langs:"希腊语", cur:"欧元 EUR",
- geo:"巴尔干半岛南端加上约 6000 个岛屿（有人居住的仅约 227 个）。80% 国土多山，海岸线长达 1.38 万公里，在欧洲仅次于挪威。",
- culture:"西方哲学、戏剧与民主制度的源头。东正教在日常生活中影响很深，命名日比生日更重要。海运业至今是全球最大的商船船东国之一。",
- cards:[
-  {t:"食物", n:"Souvlaki 与 Gyros", w:"Souvlaki", d:"烤肉串与旋转烤肉卷饼，配 tzatziki 酸奶黄瓜酱，是最国民的快餐。"},
-  {t:"食物", n:"橄榄油", w:"Olive oil", d:"希腊人均橄榄油消费量全球第一，克里特岛的饮食结构是「地中海饮食」研究的原型。"},
-  {t:"文化", n:"古希腊戏剧", w:"Ancient Greek theatre", d:"悲剧与喜剧的形式在公元前 5 世纪的雅典成型，至今仍在原剧场上演。"},
-  {t:"名人", n:"苏格拉底", w:"Socrates", d:"没有留下任何著作，全部思想通过学生柏拉图的记录流传下来。"},
-  {t:"建筑", n:"帕特农神庙", w:"Parthenon", d:"公元前 447 年动工，柱身有微妙的凸起来矫正视觉错觉。"},
-  {t:"自然", n:"圣托里尼", w:"Santorini", d:"约 3600 年前的火山大喷发形成了今天的月牙形岛与断崖，可能与亚特兰蒂斯传说有关。"},
-  {t:"影视", n:"《希腊三部曲》", w:"Theo Angelopoulos", d:"安哲罗普洛斯的长镜头把希腊的历史创伤拍成了流动的诗。"}
- ],
- videos:[["希腊历史纪录片","Ancient Greece documentary"],["圣托里尼","Santorini travel"]],
- fact:"希腊语是欧洲有文字记载历史最长的语言之一，连续使用超过 3400 年。"
-},
-{
- id:"pt", zh:"葡萄牙", en:"Portugal", flag:"🇵🇹", cont:"欧洲", lat:39.4, lon:-8.2,
- capital:"里斯本 Lisbon", pop:"约 1050 万", area:"9.2 万 km²", langs:"葡萄牙语", cur:"欧元 EUR",
- geo:"伊比利亚半岛西缘，大西洋海岸线长约 1800 公里。北部多山湿润，南部阿连特茹是平缓的软木橡树平原。亚速尔与马德拉两个大西洋群岛也属其领土。",
- culture:"大航海时代的起点，葡语今天是全球第六大母语。Saudade（一种带甜味的怀念与失落）被认为是不可翻译的国民情绪。",
- cards:[
-  {t:"食物", n:"蛋挞 Pastel de nata", w:"Pastel de nata", d:"源自热罗尼莫斯修道院，修士用剩余蛋黄发明。澳门与全球的葡式蛋挞都源于此。"},
-  {t:"食物", n:"咸鳕鱼 Bacalhau", w:"Bacalhau", d:"据说有 365 种做法，一年每天不重样，是大航海时代的储粮遗产。"},
-  {t:"文化", n:"法多 Fado", w:"Fado", d:"里斯本小酒馆里的忧伤民谣，用葡萄牙吉他伴奏，已列入联合国非遗。"},
-  {t:"名人", n:"麦哲伦", w:"Ferdinand Magellan", d:"组织了人类首次环球航行，尽管他本人死于菲律宾未能完成全程。"},
-  {t:"建筑", n:"贝伦塔", w:"Belém Tower", d:"16 世纪的曼努埃尔式堡垒，航海归来的船只以它为地标。"},
-  {t:"自然", n:"马德拉群岛", w:"Madeira", d:"大西洋上的火山岛，月桂林是冰河时期遗留的活化石森林。"},
-  {t:"影视", n:"《里斯本的故事》", w:"Lisbon Story", d:"维姆·文德斯 1994 年作品，用一个录音师的视角记录里斯本的声音。"}
- ],
- videos:[["葡萄牙纪录片","Portugal documentary"],["法多音乐","Fado music Lisbon"]],
- fact:"葡萄牙是全球最大的软木生产国，占世界产量约一半——你手里的红酒塞很可能来自这里。"
-},
-{
- id:"eg", zh:"埃及", en:"Egypt", flag:"🇪🇬", cont:"非洲", lat:26.8, lon:30.8,
- capital:"开罗 Cairo", pop:"约 1.1 亿", area:"100 万 km²", langs:"阿拉伯语", cur:"埃及镑 EGP",
- geo:"国土 95% 是沙漠，人口几乎全部挤在尼罗河两岸和三角洲那条狭窄的绿带上。苏伊士运河连接地中海与红海，承担全球约 12% 的海运贸易。",
- culture:"连续 5000 年的文明记录。阿拉伯世界的文化与影视中心，埃及方言因电影电视的传播成为最被广泛听懂的阿拉伯语——在阿联酋工作会常常遇到。",
- cards:[
-  {t:"食物", n:"Koshari", w:"Koshari", d:"米、扁豆、通心粉、鹰嘴豆加炸洋葱与番茄酱，开罗最国民的街头主食。"},
-  {t:"食物", n:"Ful medames", w:"Ful medames", d:"炖蚕豆，可追溯到法老时期，至今仍是埃及人最常见的早餐。"},
-  {t:"文化", n:"象形文字", w:"Egyptian hieroglyphs", d:"1822 年商博良借助罗塞塔石碑破译，重新打开了古埃及的历史大门。"},
-  {t:"名人", n:"纳吉布·马哈福兹", w:"Naguib Mahfouz", d:"1988 年诺贝尔文学奖得主，《开罗三部曲》写尽了城市中产家庭的百年变迁。"},
-  {t:"建筑", n:"吉萨金字塔", w:"Giza pyramid complex", d:"胡夫金字塔曾是世界最高建筑长达 3800 年，是古代七大奇迹中唯一留存的。"},
-  {t:"自然", n:"西奈半岛与红海", w:"Red Sea", d:"红海珊瑚礁因耐高温而成为全球气候变化研究的重点区域。"},
-  {t:"影视", n:"《埃及艳后》相关", w:"Cleopatra", d:"克利奥帕特拉七世是托勒密王朝末代女王，也是被影视重塑最多次的古代女性。"}
- ],
- videos:[["古埃及纪录片","Ancient Egypt documentary"],["开罗街头","Cairo street walk"]],
- fact:"新落成的大埃及博物馆是全球最大的单一文明博物馆，图坦卡蒙的全部陪葬品首次完整展出。"
-},
-{
- id:"ma", zh:"摩洛哥", en:"Morocco", flag:"🇲🇦", cont:"非洲", lat:31.8, lon:-7.1,
- capital:"拉巴特 Rabat", pop:"约 3800 万", area:"44.6 万 km²", langs:"阿拉伯语、柏柏尔语（法语通用）", cur:"迪拉姆 MAD",
- geo:"非洲西北角，同时拥有地中海与大西洋海岸。阿特拉斯山脉斜贯全境，把湿润的北部与撒哈拉沙漠隔开。图卜卡勒峰海拔 4167 米，是北非最高点。",
- culture:"柏柏尔、阿拉伯、安达卢西亚与法国殖民遗产的四重叠加。手工业极为发达——地毯、皮革、金属灯具、陶器都是全球家居与礼品市场的长期供应源。",
- cards:[
-  {t:"食物", n:"塔吉锅 Tagine", w:"Tagine", d:"锥形陶锅让蒸汽回流，用极少的水慢炖肉与果干，甜咸交织。"},
-  {t:"食物", n:"薄荷茶", w:"Maghrebi mint tea", d:"高冲倒茶产生泡沫，敬客三杯各有寓意，是社交的核心仪式。"},
-  {t:"文化", n:"麦地那与露天集市", w:"Medina quarter", d:"老城迷宫般的街巷按行业分区，手工艺人世代在同一条巷子里劳作。"},
-  {t:"名人", n:"伊本·白图泰", w:"Ibn Battuta", d:"14 世纪丹吉尔人，游历约 12 万公里，行程远超马可·波罗。"},
-  {t:"建筑", n:"哈桑二世清真寺", w:"Hassan II Mosque", d:"卡萨布兰卡海边，宣礼塔高 210 米，部分建于海上。"},
-  {t:"自然", n:"撒哈拉沙丘", w:"Erg Chebbi", d:"梅尔祖卡附近的沙丘可高达 150 米，是最容易抵达的撒哈拉体验区。"},
-  {t:"影视", n:"《北非谍影》", w:"Casablanca (film)", d:"1942 年电影其实全程在好莱坞摄影棚拍摄，却让卡萨布兰卡成了全球想象。"}
- ],
- videos:[["摩洛哥纪录片","Morocco documentary"],["马拉喀什集市","Marrakech medina walk"]],
- fact:"非斯的 Al-Qarawiyyin 大学创办于 859 年，被吉尼斯认定为世界上持续运营最久的高等学府。"
-},
-{
- id:"et", zh:"埃塞俄比亚", en:"Ethiopia", flag:"🇪🇹", cont:"非洲", lat:9.1, lon:40.5,
- capital:"亚的斯亚贝巴 Addis Ababa", pop:"约 1.3 亿", area:"110 万 km²", langs:"阿姆哈拉语等", cur:"比尔 ETB",
- geo:"东非高原国家，被称为「非洲屋脊」，首都海拔约 2350 米。东非大裂谷贯穿全境，达纳基尔洼地是地球上最热的地方之一，低于海平面 125 米。",
- culture:"非洲唯一未被长期殖民的国家。使用自己的历法（比公历晚约七年）和一天从日出开始计算的时间制。正教传统可追溯到 4 世纪。",
- cards:[
-  {t:"食物", n:"英吉拉 Injera", w:"Injera", d:"苔麸发酵制成的海绵状酸味薄饼，既是主食也是盘子和餐具。"},
-  {t:"食物", n:"咖啡仪式", w:"Ethiopian coffee ceremony", d:"咖啡的原产地。现场炒豆、研磨、冲煮，三轮敬客，一次可以持续一小时以上。"},
-  {t:"文化", n:"埃塞俄比亚正教", w:"Ethiopian Orthodox Tewahedo Church", d:"保留了大量早期基督教传统，拥有独立的圣经正典。"},
-  {t:"名人", n:"阿贝贝·比基拉", w:"Abebe Bikila", d:"1960 年罗马奥运会赤脚跑完马拉松夺冠，开启了东非长跑的统治时代。"},
-  {t:"建筑", n:"拉利贝拉岩石教堂", w:"Rock-Hewn Churches, Lalibela", d:"12 世纪从整块岩石中向下凿出的 11 座教堂，至今仍在使用。"},
-  {t:"自然", n:"达纳基尔洼地", w:"Danakil Depression", d:"硫磺池、盐湖与熔岩湖构成的地表，被用来模拟外星环境研究。"},
-  {t:"影视", n:"《露西》化石", w:"Lucy (Australopithecus)", d:"1974 年在此发现的 320 万年前人类祖先化石，命名自当时营地播放的披头士歌曲。"}
- ],
- videos:[["埃塞俄比亚纪录片","Ethiopia documentary"],["咖啡起源","Ethiopia coffee ceremony"]],
- fact:"埃塞俄比亚现在是 2018 年前后——他们的历法比公历晚约七年八个月。"
-},
-{
- id:"ke", zh:"肯尼亚", en:"Kenya", flag:"🇰🇪", cont:"非洲", lat:-0.02, lon:37.9,
- capital:"内罗毕 Nairobi", pop:"约 5600 万", area:"58 万 km²", langs:"斯瓦希里语、英语", cur:"先令 KES",
- geo:"赤道横穿国土，但中部高原海拔使气候温和。东非大裂谷纵贯，肯尼亚山（5199 米）是非洲第二高峰。东部是印度洋海岸，北部为半干旱地带。",
- culture:"40 多个族群共存，斯瓦希里语作为通用语连接东非。移动支付 M-Pesa 在这里比信用卡普及得更早更彻底，是全球金融科技的经典案例。",
- cards:[
-  {t:"食物", n:"Ugali", w:"Ugali", d:"玉米粉做的硬粥团，用手捏取蘸菜汤，是东非最基本的主食。"},
-  {t:"食物", n:"Nyama choma", w:"Nyama choma", d:"炭烤山羊肉，配盐和 kachumbari 洋葱番茄沙拉，是周末聚会的固定项目。"},
-  {t:"文化", n:"马赛人", w:"Maasai", d:"以红色 shuka 布、跳跃舞蹈和半游牧生活著称，横跨肯尼亚与坦桑尼亚。"},
-  {t:"名人", n:"旺加里·马塔伊", w:"Wangari Maathai", d:"绿带运动创始人，2004 年获诺贝尔和平奖，组织女性种下数千万棵树。"},
-  {t:"建筑", n:"拉穆古镇", w:"Lamu Old Town", d:"东非保存最完好的斯瓦希里聚落，珊瑚石建筑与雕花木门是标志。"},
-  {t:"自然", n:"马赛马拉", w:"Maasai Mara", d:"每年七至十月，约 150 万头角马渡过马拉河，是地球上规模最大的陆地动物迁徙。"},
-  {t:"影视", n:"《走出非洲》", w:"Out of Africa", d:"1985 年电影，取景于恩贡山，把肯尼亚高原的风景带给了全球观众。"}
- ],
- videos:[["马赛马拉动物大迁徙","Great Migration Maasai Mara"],["肯尼亚纪录片","Kenya documentary"]],
- fact:"内罗毕国家公园是全球唯一位于首都市区边缘的野生动物园——狮子背后就是城市天际线。"
-},
-{
- id:"za", zh:"南非", en:"South Africa", flag:"🇿🇦", cont:"非洲", lat:-30.6, lon:22.9,
- capital:"比勒陀利亚／开普敦／布隆方丹（三个首都）", pop:"约 6300 万", area:"122 万 km²", langs:"12 种官方语言", cur:"兰特 ZAR",
- geo:"非洲大陆最南端，两洋交汇处。内陆高原被大陡崖环绕，开普地区有独特的地中海气候。开普植物区是全球六大植物王国中面积最小却最密集的一个。",
- culture:"「彩虹之国」的说法来自图图大主教。1994 年结束种族隔离后建立的宪政秩序被视为转型典范，但经济不平等仍是最尖锐的问题。",
- cards:[
-  {t:"食物", n:"Braai", w:"Braai", d:"不只是烧烤，而是一种社交制度，甚至有专门的国家 Braai 日。"},
-  {t:"食物", n:"Bunny chow", w:"Bunny chow", d:"德班印度裔发明：挖空的面包装咖喱，起源于种族隔离时期的外带需求。"},
-  {t:"文化", n:"Ubuntu", w:"Ubuntu philosophy", d:"「我存在是因为我们存在」——强调共同体的非洲伦理观，被写入转型正义的实践。"},
-  {t:"名人", n:"纳尔逊·曼德拉", w:"Nelson Mandela", d:"服刑 27 年后成为首位黑人总统，选择和解而非清算。"},
-  {t:"建筑", n:"宪法山", w:"Constitution Hill, Johannesburg", d:"用旧监狱改建的宪法法院，刻意保留了压迫的物理痕迹。"},
-  {t:"自然", n:"桌山", w:"Table Mountain", d:"平顶砂岩山，云层覆盖时被称为「桌布」，山上有 2200 多种植物。"},
-  {t:"影视", n:"《第九区》", w:"District 9", d:"2009 年科幻片，用外星人隔离区隐喻种族隔离历史。"}
- ],
- videos:[["南非纪录片","South Africa documentary"],["开普敦","Cape Town travel"]],
- fact:"南非是唯一拥有三个首都的国家：行政、立法、司法各自分设一地。"
-},
-{
- id:"ng", zh:"尼日利亚", en:"Nigeria", flag:"🇳🇬", cont:"非洲", lat:9.1, lon:8.7,
- capital:"阿布贾 Abuja", pop:"约 2.3 亿（非洲第一）", area:"92.4 万 km²", langs:"英语（另有豪萨、约鲁巴、伊博语）", cur:"奈拉 NGN",
- geo:"西非几内亚湾沿岸，南部是尼日尔河三角洲的红树林与油田，中部是萨凡纳草原，北部逐渐过渡到萨赫勒半干旱带。",
- culture:"非洲人口最多的国家，也是文化输出最猛的国家之一：Nollywood 的年产片量居世界前列，Afrobeats 已进入全球流行音乐主流。年轻人口比例极高，是未来最值得关注的消费市场。",
- cards:[
-  {t:"食物", n:"Jollof rice", w:"Jollof rice", d:"番茄香料焖饭，尼日利亚与加纳为「谁做得更好」争论了几十年，成了网络文化梗。"},
-  {t:"食物", n:"Suya", w:"Suya", d:"花生粉与香料腌制的烤肉串，源自北部豪萨族，现在遍布全国街头。"},
-  {t:"文化", n:"Afrobeats", w:"Afrobeats", d:"从拉各斯发源的流行音乐浪潮，Burna Boy、Wizkid 等艺人已进入全球榜单。"},
-  {t:"名人", n:"钦努阿·阿契贝", w:"Chinua Achebe", d:"《瓦解》作者，被称为现代非洲文学之父，改变了非洲叙事的话语权。"},
-  {t:"建筑", n:"苏库尔文化景观", w:"Sukur", d:"石砌梯田与宫殿构成的山地聚落，非洲首个被列入世界遗产的文化景观。"},
-  {t:"自然", n:"扎马河谷", w:"Zuma Rock", d:"阿布贾附近的巨型独石山，高约 300 米，被称为「阿布贾之门」。"},
-  {t:"影视", n:"Nollywood", w:"Cinema of Nigeria", d:"以极低成本、极高产量运作的电影工业，为非洲大陆塑造了自己的明星体系。"}
- ],
- videos:[["尼日利亚纪录片","Nigeria documentary"],["Afrobeats 音乐","Afrobeats Nigeria music"]],
- fact:"尼日利亚有超过 500 种语言，是全球语言多样性最高的国家之一。"
-}
-]);
-
-/* 国家内容库 · 美洲 + 大洋洲 */
-window.GEO = (window.GEO || []).concat([
-{
- id:"mx", zh:"墨西哥", en:"Mexico", flag:"🇲🇽", cont:"北美洲", lat:23.6, lon:-102.5,
- capital:"墨西哥城 Mexico City", pop:"约 1.3 亿", area:"196 万 km²", langs:"西班牙语（另有 68 种原住民语言）", cur:"比索 MXN",
- geo:"东西马德雷山脉夹着中部高原，首都海拔 2240 米。北部是奇瓦瓦沙漠，南部尤卡坦半岛是石灰岩平台，遍布天然井 cenote。位于火环带上，地震与火山活跃。",
- culture:"阿兹特克与玛雅文明的遗产和西班牙殖民文化深度混血。亡灵节把死亡处理成一场重逢而非哀悼，是最能代表这个国家世界观的节日。",
- cards:[
-  {t:"食物", n:"塔可 Taco", w:"Taco", d:"玉米饼是基础，牧羊人塔可 al pastor 其实源自黎巴嫩移民带来的旋转烤肉。"},
-  {t:"食物", n:"Mole", w:"Mole (sauce)", d:"用数十种材料熬制的酱汁，包括辣椒与巧克力，普埃布拉的黑 mole 最著名。"},
-  {t:"文化", n:"亡灵节", w:"Day of the Dead", d:"11 月初搭祭坛、摆万寿菊与糖骷髅迎接逝者归来，列入联合国非遗。"},
-  {t:"名人", n:"弗里达·卡罗", w:"Frida Kahlo", d:"用自画像记录身体疼痛与身份认同，成为全球艺术与流行文化的符号。"},
-  {t:"建筑", n:"奇琴伊察", w:"Chichen Itza", d:"玛雅城市，库库尔坎金字塔在春秋分时会在阶梯上投出羽蛇下降的光影。"},
-  {t:"自然", n:"帝王蝶越冬地", w:"Monarch butterfly", d:"数亿只帝王蝶飞行 4000 公里到米却肯州的冷杉林越冬，把整片树林染成橙色。"},
-  {t:"影视", n:"《罗马》", w:"Roma (2018 film)", d:"阿方索·卡隆的黑白自传式作品，还原了 1970 年代墨西哥城的中产家庭生活。"}
- ],
- videos:[["墨西哥纪录片","Mexico documentary culture"],["亡灵节","Day of the Dead Mexico"]],
- fact:"墨西哥城建在一个被填平的湖上，因此每年仍在持续下沉，部分区域年沉降可达 30 厘米以上。"
-},
-{
- id:"cu", zh:"古巴", en:"Cuba", flag:"🇨🇺", cont:"北美洲", lat:21.5, lon:-79.5,
- capital:"哈瓦那 Havana", pop:"约 1100 万", area:"11 万 km²", langs:"西班牙语", cur:"古巴比索 CUP",
- geo:"加勒比海最大的岛屿，东西狭长约 1250 公里。地形以平原为主，东南部有马埃斯特腊山。位于飓风路径上，每年夏秋需应对风季。",
- culture:"西班牙、非洲与加勒比文化的融合体。音乐是这个国家最强的输出品——从颂乐到salsa。高识字率与医疗体系是社会主义时期的遗产。",
- cards:[
-  {t:"食物", n:"Ropa vieja", w:"Ropa vieja", d:"番茄炖手撕牛肉，名字意为「旧衣服」，配黑豆饭与炸香蕉。"},
-  {t:"食物", n:"古巴三明治", w:"Cuban sandwich", d:"火腿、烤猪肉、瑞士奶酪与酸黄瓜压烤，其实是佛罗里达古巴移民社区的产物。"},
-  {t:"文化", n:"颂乐与萨尔萨", w:"Son cubano", d:"非洲节奏与西班牙旋律的混血，是萨尔萨舞曲的直接源头。"},
-  {t:"名人", n:"何塞·马蒂", w:"José Martí", d:"诗人与独立运动领袖，《关塔那梅拉》的歌词就出自他的诗。"},
-  {t:"建筑", n:"哈瓦那旧城", w:"Old Havana", d:"殖民时期的巴洛克与新古典建筑群，色彩斑驳的立面与老爷车构成标志画面。"},
-  {t:"自然", n:"比尼亚莱斯山谷", w:"Viñales Valley", d:"石灰岩圆丘 mogote 之间的烟草田，至今仍用牛耕作业。"},
-  {t:"影视", n:"《乐满哈瓦那》", w:"Buena Vista Social Club", d:"1999 年纪录片，让一群被遗忘的老年古巴乐手重新登上世界舞台。"}
- ],
- videos:[["古巴纪录片","Cuba documentary Havana"],["古巴音乐","Buena Vista Social Club music"]],
- fact:"古巴街头大量 1950 年代的美国老爷车仍在运行，靠车主自制零件和换装苏联发动机维持了七十年。"
-},
-{
- id:"ca", zh:"加拿大", en:"Canada", flag:"🇨🇦", cont:"北美洲", lat:56.1, lon:-106.3,
- capital:"渥太华 Ottawa", pop:"约 4100 万", area:"998 万 km²（全球第二）", langs:"英语、法语", cur:"加元 CAD",
- geo:"国土面积全球第二，但人口约 90% 居住在距美国边境 160 公里以内。拥有全球最长的海岸线和约 200 万个湖泊——世界淡水湖总面积的一半以上在这里。",
- culture:"官方多元文化政策的国家，移民占人口比例超过 20%。魁北克的法语文化自成体系。原住民与解决历史遗留问题是当代最重要的公共议题之一。",
- cards:[
-  {t:"食物", n:"Poutine", w:"Poutine", d:"薯条淋肉汁配奶酪凝乳，源自 1950 年代魁北克乡村小餐馆。"},
-  {t:"食物", n:"枫糖浆", w:"Maple syrup", d:"全球约七成产自魁北克，还有一个国家级的枫糖战略储备库。"},
-  {t:"文化", n:"因纽特石堆 Inuksuk", w:"Inuksuk", d:"北极地区用石块堆成的人形标记，用于导航与狩猎，如今是加拿大的文化符号。"},
-  {t:"名人", n:"特里·福克斯", w:"Terry Fox", d:"截肢后横跨加拿大跑步募捐，虽未完成全程，其年度纪念跑已在全球举行四十余年。"},
-  {t:"建筑", n:"国会山", w:"Parliament Hill", d:"渥太华的哥特复兴式建筑群，和平塔的钟琴有 53 口钟。"},
-  {t:"自然", n:"班夫与落基山", w:"Banff National Park", d:"加拿大首个国家公园，露易丝湖的松石色来自冰川研磨的岩粉。"},
-  {t:"影视", n:"《大空头》等取景", w:"Cinema of Canada", d:"温哥华与多伦多是北美第三、第四大影视制作中心，被称为「北好莱坞」。"}
- ],
- videos:[["加拿大纪录片","Canada documentary nature"],["北极光加拿大","Northern lights Canada"]],
- fact:"加拿大有一条 6400 公里的横贯步道 Trans Canada Trail，是全球最长的娱乐性步道网络。"
-},
-{
- id:"br", zh:"巴西", en:"Brazil", flag:"🇧🇷", cont:"南美洲", lat:-14.2, lon:-51.9,
- capital:"巴西利亚 Brasília", pop:"约 2.15 亿", area:"851 万 km²", langs:"葡萄牙语", cur:"雷亚尔 BRL",
- geo:"占南美大陆近一半，与除智利、厄瓜多尔外所有南美国家接壤。亚马孙雨林覆盖北部，中部是塞拉多稀树草原，南部为温带高原。海岸线长 7491 公里。",
- culture:"欧洲、非洲、原住民与日本移民（圣保罗有全球最大的海外日裔社群）的深度混合。足球与狂欢节是最外显的两张名片，音乐上从桑巴到 bossa nova 影响全球。",
- cards:[
-  {t:"食物", n:"Feijoada", w:"Feijoada", d:"黑豆炖各种猪肉部位，配橙片与木薯粉，传统上周三和周六才吃。"},
-  {t:"食物", n:"Pão de queijo", w:"Pão de queijo", d:"木薯粉与奶酪做的小面包，外脆内韧，米纳斯州的国民早餐。"},
-  {t:"文化", n:"里约狂欢节", w:"Rio Carnival", d:"桑巴学校用一年时间准备一晚的游行，服装与花车本身就是一个庞大产业。"},
-  {t:"名人", n:"奥斯卡·尼迈耶", w:"Oscar Niemeyer", d:"用混凝土曲线定义了巴西利亚，工作到 104 岁。"},
-  {t:"建筑", n:"救世基督像", w:"Christ the Redeemer", d:"高 30 米、立于科尔科瓦多山顶，1931 年落成，装饰用的皂石来自瑞典。"},
-  {t:"自然", n:"伊瓜苏瀑布", w:"Iguazu Falls", d:"由 275 道瀑布组成，跨越巴西与阿根廷边境，「魔鬼咽喉」是最壮观的一段。"},
-  {t:"影视", n:"《上帝之城》", w:"City of God (2002 film)", d:"用非职业演员拍摄里约贫民窟的成长与暴力，成为拉美电影的里程碑。"}
- ],
- videos:[["巴西纪录片","Brazil documentary Amazon"],["里约狂欢节","Rio Carnival samba"]],
- fact:"亚马孙河没有一座桥横跨其主河道——两岸交通完全依赖船与渡轮。"
-},
-{
- id:"pe", zh:"秘鲁", en:"Peru", flag:"🇵🇪", cont:"南美洲", lat:-9.2, lon:-75.0,
- capital:"利马 Lima", pop:"约 3400 万", area:"128.5 万 km²", langs:"西班牙语、克丘亚语、艾马拉语", cur:"索尔 PEN",
- geo:"三种截然不同的地带并列：狭窄的太平洋沙漠海岸、安第斯高山区、亚马孙雨林。利马是全球第二大建在沙漠上的城市，几乎不下雨。",
- culture:"印加帝国的核心地带，克丘亚语至今有数百万使用者。近二十年秘鲁料理成为全球美食界的重要力量，把原住民食材与日本、中国移民的技法结合。",
- cards:[
-  {t:"食物", n:"Ceviche", w:"Ceviche", d:"青柠汁「冷煮」生鱼，配红洋葱与辣椒，秘鲁把它定为国家文化遗产。"},
-  {t:"食物", n:"Lomo saltado", w:"Lomo saltado", d:"牛肉炒番茄洋葱配薯条与米饭，中国移民带来的炒锅技法与本地食材的结晶。"},
-  {t:"文化", n:"印加纺织", w:"Andean textiles", d:"用羊驼毛与天然染料织出的图案承载着族群与地区的信息，技艺代代相传。"},
-  {t:"名人", n:"马里奥·巴尔加斯·略萨", w:"Mario Vargas Llosa", d:"2010 年诺贝尔文学奖得主，拉美文学爆炸的代表人物之一。"},
-  {t:"建筑", n:"马丘比丘", w:"Machu Picchu", d:"15 世纪的印加城塞，海拔 2430 米，石块间不用灰浆却严丝合缝。"},
-  {t:"自然", n:"的的喀喀湖", w:"Lake Titicaca", d:"海拔 3812 米的可通航湖泊，乌鲁人至今生活在用芦苇编成的浮岛上。"},
-  {t:"影视", n:"《谈谈情跳跳舞》纪录", w:"Cinema of Peru", d:"《利马之音》等作品把安第斯移民城市的现实带进国际影展。"}
- ],
- videos:[["秘鲁纪录片","Peru documentary Machu Picchu"],["秘鲁美食","Peruvian food documentary"]],
- fact:"秘鲁有超过 3000 个土豆品种——土豆的野生起源地就在安第斯山区。"
-},
-{
- id:"ar", zh:"阿根廷", en:"Argentina", flag:"🇦🇷", cont:"南美洲", lat:-38.4, lon:-63.6,
- capital:"布宜诺斯艾利斯 Buenos Aires", pop:"约 4600 万", area:"278 万 km²", langs:"西班牙语", cur:"阿根廷比索 ARS",
- geo:"南北跨越 3700 公里，从亚热带的伊瓜苏一直延伸到接近南极的火地岛。西部是安第斯山，阿空加瓜峰 6961 米是西半球最高点；中部潘帕斯草原是农牧核心。",
- culture:"欧洲移民（尤其意大利与西班牙）比例极高，塑造了饮食与口音。探戈从港口移民社区的边缘舞蹈变成国家象征。足球在这里近乎宗教。",
- cards:[
-  {t:"食物", n:"Asado", w:"Asado", d:"慢火炭烤各部位牛肉，烤肉师 asador 的地位很高，周末全家聚会的核心。"},
-  {t:"食物", n:"马黛茶 Mate", w:"Mate (drink)", d:"共用一根吸管轮流传饮，分享 mate 是一种建立关系的仪式。"},
-  {t:"文化", n:"探戈", w:"Tango", d:"19 世纪末诞生于布宜诺斯艾利斯的港口区，2009 年列入联合国非遗。"},
-  {t:"名人", n:"博尔赫斯", w:"Jorge Luis Borges", d:"用迷宫、镜子与无限图书馆重塑了现代小说的可能性。"},
-  {t:"建筑", n:"科隆剧院", w:"Teatro Colón", d:"被公认为世界音响效果最佳的歌剧院之一，1908 年落成。"},
-  {t:"自然", n:"佩里托莫雷诺冰川", w:"Perito Moreno Glacier", d:"少数仍在前进的冰川之一，冰墙定期崩塌形成巨响。"},
-  {t:"影视", n:"《谜一样的双眼》", w:"The Secret in Their Eyes", d:"2009 年作品，获奥斯卡最佳外语片，球场长镜头是影史名场面。"}
- ],
- videos:[["阿根廷纪录片","Argentina documentary Patagonia"],["探戈表演","Tango Buenos Aires"]],
- fact:"布宜诺斯艾利斯的心理咨询师人均数量是全球最高的城市之一，甚至有一个街区被叫做「弗洛伊德村」。"
-},
-{
- id:"co", zh:"哥伦比亚", en:"Colombia", flag:"🇨🇴", cont:"南美洲", lat:4.6, lon:-74.3,
- capital:"波哥大 Bogotá", pop:"约 5200 万", area:"114 万 km²", langs:"西班牙语", cur:"哥伦比亚比索 COP",
- geo:"南美唯一同时拥有太平洋与加勒比海岸的国家。安第斯山在此分成三条山脉，形成海拔差异极大的谷地；东部是亚马孙与奥里诺科平原。生物多样性全球第二。",
- culture:"从长期内战走向和平进程的转型社会，麦德林从「最危险城市」变成城市创新案例。咖啡文化区是世界遗产，也是国家认同的一部分。",
- cards:[
-  {t:"食物", n:"Bandeja paisa", w:"Bandeja paisa", d:"一盘里有豆子、米饭、猪皮、香肠、鳄梨和煎蛋，麦德林地区的巨型国民餐。"},
-  {t:"食物", n:"Arepa", w:"Arepa", d:"玉米饼，早餐配奶酪，与委内瑞拉共享并常年互争起源。"},
-  {t:"文化", n:"Cumbia 与 Vallenato", w:"Vallenato", d:"手风琴主导的加勒比民谣，讲述日常故事，已列入联合国非遗。"},
-  {t:"名人", n:"加西亚·马尔克斯", w:"Gabriel García Márquez", d:"《百年孤独》作者，1982 年诺贝尔文学奖，魔幻现实主义的代表。"},
-  {t:"建筑", n:"卡塔赫纳古城", w:"Cartagena, Colombia", d:"西班牙殖民时期的加勒比要塞城市，城墙至今完整。"},
-  {t:"自然", n:"彩虹河 Caño Cristales", w:"Caño Cristales", d:"每年七到十一月，水生植物变红，河床呈现红黄绿蓝的流动色带。"},
-  {t:"影视", n:"《寻梦环游记》灵感相关", w:"Encanto", d:"迪士尼 2021 年动画《魔法满屋》以哥伦比亚为背景，带动了全球对其文化的兴趣。"}
- ],
- videos:[["哥伦比亚纪录片","Colombia documentary"],["麦德林城市转型","Medellin transformation documentary"]],
- fact:"哥伦比亚是全球鸟类种类最多的国家，记录到超过 1900 种。"
-},
-{
- id:"au", zh:"澳大利亚", en:"Australia", flag:"🇦🇺", cont:"大洋洲", lat:-25.3, lon:133.8,
- capital:"堪培拉 Canberra", pop:"约 2700 万", area:"769 万 km²", langs:"英语", cur:"澳元 AUD",
- geo:"唯一独占一个大陆的国家。中部是干旱的内陆 outback，人口高度集中在东南沿海。大分水岭沿东岸延伸，大堡礁是地球上最大的活体结构。",
- culture:"原住民文化有超过 6 万年的连续历史，是世界上最古老的持续文化之一。战后移民浪潮使墨尔本、悉尼成为高度多元的城市。休闲与户外是国民生活方式的核心。",
- cards:[
-  {t:"食物", n:"Vegemite", w:"Vegemite", d:"酵母提取物酱，咸苦浓烈，薄薄一层配黄油吐司，外国人几乎都过不了这关。"},
-  {t:"食物", n:"Lamington", w:"Lamington", d:"海绵蛋糕裹巧克力与椰蓉，与新西兰长期争夺发明权。"},
-  {t:"文化", n:"原住民梦创时代", w:"Dreamtime", d:"以歌线（songline）记录地理与法律的口述体系，把地图、历史与信仰合为一体。"},
-  {t:"名人", n:"凯茜·弗里曼", w:"Cathy Freeman", d:"2000 年悉尼奥运会 400 米夺冠，点燃圣火并披原住民旗绕场，成为和解的象征时刻。"},
-  {t:"建筑", n:"悉尼歌剧院", w:"Sydney Opera House", d:"丹麦建筑师伍重设计，帆状壳体的几何难题拖了十余年才解决。"},
-  {t:"自然", n:"乌鲁鲁", w:"Uluru", d:"中部的巨型砂岩独石，对阿南古人是圣地，2019 年起全面禁止攀爬。"},
-  {t:"影视", n:"《疯狂麦克斯》", w:"Mad Max", d:"用澳洲荒漠拍出的末世公路美学，影响了全球动作片四十年。"}
- ],
- videos:[["澳大利亚纪录片","Australia documentary outback"],["大堡礁","Great Barrier Reef documentary"]],
- fact:"澳大利亚的绵羊数量长期是人口的两倍以上，高峰期曾接近人口的十倍。"
-},
-{
- id:"nz", zh:"新西兰", en:"New Zealand", flag:"🇳🇿", cont:"大洋洲", lat:-40.9, lon:174.9,
- capital:"惠灵顿 Wellington", pop:"约 530 万", area:"26.8 万 km²", langs:"英语、毛利语、新西兰手语", cur:"新西兰元 NZD",
- geo:"由南北两大岛构成，位于太平洋与澳洲板块交界，地热与地震活跃。南岛有南阿尔卑斯山与峡湾，北岛有火山高原与间歇泉。距最近的大陆约 2000 公里。",
- culture:"毛利文化被制度性地纳入国家认同——毛利语是官方语言，《怀唐伊条约》是宪政基础的一部分。人口密度低、环保意识强，是最早宣布妇女普选权的国家。",
- cards:[
-  {t:"食物", n:"Hāngī", w:"Hāngī", d:"毛利传统的地窖蒸烤法，用烧热的石头在地坑中焖熟食物，需要数小时。"},
-  {t:"食物", n:"Pavlova", w:"Pavlova", d:"蛋白霜蛋糕配奶油水果，与澳大利亚长期争抢发明权，命名自俄国芭蕾舞者。"},
-  {t:"文化", n:"哈卡 Haka", w:"Haka", d:"毛利战舞，全黑队赛前表演使其闻名全球，但它在毛利社会中也用于欢迎与哀悼。"},
-  {t:"名人", n:"埃德蒙·希拉里", w:"Edmund Hillary", d:"1953 年首登珠峰，之后把大量精力投入尼泊尔的学校与医院建设。"},
-  {t:"建筑", n:"怀唐伊条约签署地", w:"Waitangi Treaty Grounds", d:"1840 年英国王室与毛利部族签约之地，是理解新西兰国家结构的起点。"},
-  {t:"自然", n:"米尔福德峡湾", w:"Milford Sound", d:"冰川切割出的峡湾，年降雨量超过 6000 毫米，雨后瀑布沿崖壁密布。"},
-  {t:"影视", n:"《指环王》", w:"The Lord of the Rings (film series)", d:"彼得·杰克逊把全国变成中土世界，带来了持续二十年的取景地旅游经济。"}
- ],
- videos:[["新西兰纪录片","New Zealand documentary nature"],["毛利文化","Maori culture haka"]],
- fact:"新西兰在人类抵达前没有陆生哺乳动物（除蝙蝠外），因此演化出了大量不会飞的鸟类。"
-},
-{
- id:"fj", zh:"斐济", en:"Fiji", flag:"🇫🇯", cont:"大洋洲", lat:-17.7, lon:178.0,
- capital:"苏瓦 Suva", pop:"约 93 万", area:"1.8 万 km²", langs:"英语、斐济语、斐济印地语", cur:"斐济元 FJD",
- geo:"由约 330 个岛屿组成（约三分之一有人居住），位于南太平洋。主岛维提岛多山，东侧迎风面雨林密布，西侧背风面干燥，适合甘蔗种植。180 度经线穿过其国土。",
- culture:"原住民斐济人与英属时期引入的印度契约劳工后裔各占约一半，形成独特的双文化社会。村落社群 (mataqali) 仍然掌握大部分土地。",
- cards:[
-  {t:"食物", n:"Kokoda", w:"Kokoda (food)", d:"椰奶与青柠腌生鱼，是南太平洋版本的 ceviche。"},
-  {t:"食物", n:"Lovo", w:"Lovo", d:"地坑热石烤制的宴席菜，节庆与家族聚会的中心。"},
-  {t:"文化", n:"Kava 仪式", w:"Kava", d:"用胡椒科植物根部制成的饮品，饮用有严格的座次与击掌礼节，是社交与和解的媒介。"},
-  {t:"名人", n:"斐济七人制橄榄球队", w:"Fiji national rugby sevens team", d:"2016 年里约奥运会夺得斐济历史上第一枚奥运奖牌，且是金牌。"},
-  {t:"建筑", n:"Levuka 古镇", w:"Levuka", d:"19 世纪的殖民港口小镇，是太平洋岛国中少见的世界文化遗产。"},
-  {t:"自然", n:"Yasawa 群岛", w:"Yasawa Islands", d:"火山成因的链状岛屿，环礁与蓝洞是全球知名的潜水点。"},
-  {t:"影视", n:"《荒岛余生》取景", w:"Cast Away", d:"汤姆·汉克斯的荒岛戏份在斐济的 Monuriki 岛拍摄，该岛现已成为旅游点。"}
- ],
- videos:[["斐济纪录片","Fiji documentary islands"],["卡瓦仪式","Fiji kava ceremony"]],
- fact:"180 度经线穿过斐济的塔韦乌尼岛，岛上有一条标记线，可以一脚踩在今天、一脚踩在昨天。"
-}
-]);
-
 </script>
-
 <script>
 "use strict";
-/* ============ storage (safe) ============ */
 var MEM={};
-var ST={
-  get:function(k,d){ try{var v=localStorage.getItem("pf_"+k); return v?JSON.parse(v):(MEM[k]!==undefined?MEM[k]:d);}catch(e){return MEM[k]!==undefined?MEM[k]:d;} },
-  set:function(k,v){ MEM[k]=v; try{localStorage.setItem("pf_"+k,JSON.stringify(v));}catch(e){} }
-};
-
-/* ============ date ============ */
+var ST={get:function(k,d){try{var v=localStorage.getItem("pf_"+k);return v?JSON.parse(v):(MEM[k]!==undefined?MEM[k]:d);}catch(e){return MEM[k]!==undefined?MEM[k]:d;}},
+       set:function(k,v){MEM[k]=v;try{localStorage.setItem("pf_"+k,JSON.stringify(v));}catch(e){}}};
 var EPOCH=new Date(2026,0,1);
 function today(){var n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate());}
 function dayIndex(){return Math.floor((today()-EPOCH)/86400000);}
 function ymd(d){d=d||today();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
-function cnDate(){var d=today(),w="日一二三四五六"[d.getDay()];return (d.getMonth()+1)+" 月 "+d.getDate()+" 日 · 周"+w;}
-
-var SCENES=window.EN_SCENES||[], GEO=window.GEO||[], RETAIL=window.RETAIL||{sections:[]};
+function cnDate(){var d=today();return (d.getMonth()+1)+" 月 "+d.getDate()+" 日 · 周"+"日一二三四五六"[d.getDay()];}
+var SCENES=window.EN_SCENES||[],GEOIDX=[],RETAIL=null;
 function todayScene(){return SCENES[dayIndex()%SCENES.length];}
-function todayCountry(){return GEO[(dayIndex()*7+3)%GEO.length];}
-
-/* ============ nav ============ */
-var cur="today";
-function go(v){
-  cur=v;
-  document.querySelectorAll(".view").forEach(function(s){s.classList.toggle("on",s.id==="v-"+v);});
-  document.querySelectorAll("nav button").forEach(function(b){b.classList.toggle("on",b.dataset.v===v);});
-  window.scrollTo(0,0);
-}
-document.querySelectorAll("nav button").forEach(function(b){b.onclick=function(){go(b.dataset.v);};});
-
-/* ============ speech ============ */
-var VOICE=null;
-function pickVoice(){
-  try{
-    var vs=speechSynthesis.getVoices()||[];
-    VOICE=vs.find(function(v){return /en-GB/i.test(v.lang)&&!/google/i.test(v.name)})
-        ||vs.find(function(v){return /en-US/i.test(v.lang)})
-        ||vs.find(function(v){return /^en/i.test(v.lang)})||null;
-  }catch(e){}
-}
-if(window.speechSynthesis){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
-function say(t){
-  if(!window.speechSynthesis)return;
-  try{
-    speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(String(t).replace(/\s*\/\s*/g," or "));
-    u.lang="en-GB";u.rate=.88;if(VOICE)u.voice=VOICE;
-    speechSynthesis.speak(u);
-  }catch(e){}
-}
-
-/* ============ vocab / SRS ============ */
-var STEPS=[1,2,4,7,15,30,60];
-function vocab(){return ST.get("vocab",{});}
-function saveVocab(v){ST.set("vocab",v);}
-function keyOf(en){return en.toLowerCase().trim();}
-function toggleStar(en,zh,sid){
-  var v=vocab(),k=keyOf(en);
-  if(v[k]){delete v[k];}
-  else{v[k]={en:en,zh:zh,s:sid,lv:0,due:ymd()};}
-  saveVocab(v);refreshStats();return !!v[k];
-}
-function isStar(en){return !!vocab()[keyOf(en)];}
-function dueList(){
-  var v=vocab(),t=ymd(),out=[];
-  for(var k in v){if(!v[k].due||v[k].due<=t)out.push(v[k]);}
-  return out;
-}
-function grade(en,ok){
-  var v=vocab(),k=keyOf(en);if(!v[k])return;
-  var it=v[k];
-  it.lv=ok?Math.min((it.lv||0)+1,STEPS.length-1):0;
-  var d=new Date();d.setDate(d.getDate()+STEPS[it.lv]);
-  it.due=ymd(d);it.seen=(it.seen||0)+1;
-  saveVocab(v);
-}
-function refreshStats(){
-  var v=vocab(),n=0;for(var k in v)n++;
-  var e=document.getElementById("stWords");if(e)e.textContent=n;
-  e=document.getElementById("stDue");if(e)e.textContent=dueList().length;
-  e=document.getElementById("stDone");if(e)e.textContent=(ST.get("seenScenes",[])||[]).length;
-}
-
-/* ============ escaping ============ */
+function todayCountry(){return GEOIDX.length?GEOIDX[(dayIndex()*7+3)%GEOIDX.length]:null;}
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
 function attr(s){return esc(s).replace(/'/g,"&#39;");}
-
-/* ============ icons ============ */
+function sq(s){return String(s).replace(/\\/g,"").replace(/'/g,"\\'");}
 var IC_SPK='<svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
 var IC_STAR='<svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1 6.3L12 17.4 6.5 20.3l1-6.3L3 9.6l6.3-.9z"/></svg>';
-
-/* ============ TODAY ============ */
+var cur="today";
+function go(v){cur=v;document.querySelectorAll(".view").forEach(function(s){s.classList.toggle("on",s.id==="v-"+v);});
+  document.querySelectorAll("nav button").forEach(function(b){b.classList.toggle("on",b.dataset.v===v||(v==="study"&&b.dataset.v==="en"));});
+  window.scrollTo(0,0);if(v==="geo")setTimeout(sizeMap,30);}
+document.querySelectorAll("nav button").forEach(function(b){b.onclick=function(){go(b.dataset.v);};});
+/* ---- speech ---- */
+var VOICE=null;
+function pickVoice(){try{var vs=speechSynthesis.getVoices()||[];
+  VOICE=vs.find(function(v){return /en-GB/i.test(v.lang)})||vs.find(function(v){return /en-US/i.test(v.lang)})||vs.find(function(v){return /^en/i.test(v.lang)})||null;}catch(e){}}
+if(window.speechSynthesis){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
+function say(t){if(!window.speechSynthesis)return;try{speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(String(t).replace(/\s*\/\s*/g," or "));u.lang="en-GB";u.rate=.88;if(VOICE)u.voice=VOICE;speechSynthesis.speak(u);}catch(e){}}
+/* ---- SRS ---- */
+var STEPS=[0,1,2,4,7,15,30,60];
+function vocab(){return ST.get("vocab",{});}
+function saveVocab(v){ST.set("vocab",v);}
+function K(en){return String(en).toLowerCase().trim();}
+function itemsOf(s){var a=[];s.groups.forEach(function(g){g.items.forEach(function(i){a.push({en:i[0],zh:i[1],nt:"",k:"词"});});});
+  s.phrases.forEach(function(p){a.push({en:p[0],zh:p[1],nt:p[2]||"",k:"句"});});return a;}
+function rec(en){return vocab()[K(en)];}
+function setRec(o){var v=vocab();v[K(o.en)]=o;saveVocab(v);}
+function gradeCard(it,g,sid){
+  var v=vocab(),k=K(it.en),o=v[k]||{en:it.en,zh:it.zh,s:sid,lv:0,seen:0,miss:0};
+  o.zh=it.zh;o.s=sid||o.s;o.seen=(o.seen||0)+1;o.last=ymd();
+  if(g==="yes")o.lv=Math.min((o.lv||0)+2,STEPS.length-1);
+  else if(g==="mid"){o.lv=Math.max(1,Math.min((o.lv||0)+1,3));o.miss=(o.miss||0)+1;}
+  else{o.lv=0;o.miss=(o.miss||0)+2;}
+  var d=new Date();d.setDate(d.getDate()+STEPS[o.lv]);o.due=ymd(d);
+  v[k]=o;saveVocab(v);
+}
+function dueList(){var v=vocab(),t=ymd(),a=[];for(var k in v)if(!v[k].due||v[k].due<=t)a.push(v[k]);return a;}
+function weakList(){var v=vocab(),a=[];for(var k in v)if((v[k].miss||0)>=2||(v[k].lv||0)<=1)a.push(v[k]);
+  return a.sort(function(x,y){return (y.miss||0)-(x.miss||0);});}
+function knownCount(){var v=vocab(),n=0;for(var k in v)if((v[k].lv||0)>=4)n++;return n;}
+function refreshStats(){
+  var log=ST.get("log",{}),t=ymd();
+  var e=document.getElementById("stNew");if(e)e.textContent=(log[t]&&log[t].n)||0;
+  e=document.getElementById("stDue");if(e)e.textContent=dueList().length;
+  e=document.getElementById("stKnown");if(e)e.textContent=knownCount();
+  e=document.getElementById("stWeak");if(e)e.textContent=weakList().length;
+}
+function bumpLog(n){var log=ST.get("log",{}),t=ymd();log[t]=log[t]||{n:0};log[t].n+=n;ST.set("log",log);}
+/* ---- TODAY ---- */
 function renderToday(){
   document.getElementById("hdDate").textContent=cnDate();
   document.getElementById("hdBadge").textContent="第 "+(dayIndex()+1)+" 天";
   var s=todayScene(),c=todayCountry();
-  document.getElementById("tdTitle").textContent=s.title+" · "+c.zh;
-  document.getElementById("tdSub").textContent=(RETAIL.sections||[]).length
-    ? "今天学一个高频英语场景，认识一个国家，扫一眼零售动向。"
-    : "今天学一个高频英语场景，认识一个国家。";
-
-  var nw=s.groups.reduce(function(a,g){return a+g.items.length;},0);
+  document.getElementById("tdTitle").textContent=s.title+(c?" · "+c.zh:"");
+  document.getElementById("tdSub").textContent="学一个高频英语单元，认识一个国家。";
+  var all=itemsOf(s),pos=posOf(s.id);
   document.getElementById("tdScene").innerHTML=
-    '<div class="eyebrow">Scenario '+((dayIndex()%SCENES.length)+1)+' / '+SCENES.length+'</div>'+
-    '<h3 style="font-size:19px">'+esc(s.title)+' <span class="muted" style="font-weight:400;font-size:14px">'+esc(s.en)+'</span></h3>'+
-    '<p class="small muted" style="margin:8px 0 12px">'+esc(s.intro)+'</p>'+
-    '<div class="row"><span class="chip ac">'+nw+' 个词</span><span class="chip">'+s.phrases.length+' 个句子</span><span class="chip">'+s.groups.length+' 个分类</span></div>';
-  document.getElementById("tdScene").onclick=function(){openScene(s.id);};
-
-  document.getElementById("tdGeo").innerHTML=
-    '<div style="display:flex;gap:14px;align-items:center"><div class="cflag">'+c.flag+'</div>'+
-    '<div><h3 style="font-size:19px">'+esc(c.zh)+'</h3><div class="tiny">'+esc(c.en)+' · '+esc(c.cont)+' · '+esc(c.capital)+'</div></div></div>'+
-    '<p class="small muted" style="margin:12px 0 0">'+esc(c.geo.slice(0,88))+'…</p>';
-  document.getElementById("tdGeo").onclick=function(){showCountry(c.id);};
-
-  var rEl=document.getElementById("tdRetail");
-  if(!rEl||!(RETAIL.sections||[]).length){
-    if(rEl)rEl.style.display="none";
-    var rh=document.getElementById("tdRetailHd");if(rh)rh.style.display="none";
-    refreshStats();return;
-  }
-  var picks=[];
-  (RETAIL.sections||[]).forEach(function(sec){(sec.items||[]).forEach(function(i){picks.push([sec.title,i]);});});
-  var start=(dayIndex()*2)%Math.max(picks.length,1);
-  var sel=[picks[start],picks[(start+1)%picks.length]].filter(Boolean);
-  rEl.innerHTML=sel.map(function(p){
-    return '<div class="card" style="margin-bottom:10px"><div class="eyebrow">'+esc(p[0])+'</div>'+
-      '<div style="font-weight:620;font-size:15px;margin-bottom:6px">'+esc(p[1].t)+'</div>'+
-      '<div class="small muted">'+esc(String(p[1].body).slice(0,110))+'…</div></div>';
-  }).join("")+'<button class="btn full" onclick="go(\'retail\')">查看全部零售动向</button>';
-  refreshStats();
+   '<div class="card"><div class="eyebrow">Unit '+((dayIndex()%SCENES.length)+1)+' / '+SCENES.length+'</div>'+
+   '<h3 style="font-size:19px">'+esc(s.title)+' <span class="muted" style="font-weight:400;font-size:14px">'+esc(s.en)+'</span></h3>'+
+   '<p class="small muted" style="margin:8px 0 12px">'+esc(s.intro)+'</p>'+
+   '<div class="row" style="margin-bottom:13px"><span class="chip ac">'+all.length+' 张卡片</span><span class="chip">'+s.groups.length+' 个分类</span>'+
+   (pos?'<span class="chip ok">已学到第 '+pos+' 张</span>':'')+'</div>'+
+   '<div class="row"><button class="btn pri" style="flex:1" onclick="startStudy(\''+attr(s.id)+'\',\'new\')">'+(pos?'继续学习':'进入学习模式')+'</button>'+
+   '<button class="btn" style="flex:1" onclick="openScene(\''+attr(s.id)+'\')">查看列表</button></div>'+
+   '<div class="row" style="margin-top:9px"><button class="btn full" onclick="startReview()">复习 '+dueList().length+' 张到期卡片</button></div></div>';
+  if(c){document.getElementById("tdGeo").innerHTML=
+   '<div style="display:flex;gap:14px;align-items:center"><div class="cflag">'+c.flag+'</div>'+
+   '<div><h3 style="font-size:19px">'+esc(c.zh)+'</h3><div class="tiny">'+esc(c.en)+' · '+esc(c.cont)+' · '+esc(c.cap)+'</div></div></div>';
+   document.getElementById("tdGeo").onclick=function(){showCountry(c.id);};}
+  renderTodayRetail();refreshStats();
 }
-
-/* ============ ENGLISH ============ */
+function renderTodayRetail(){
+  var el=document.getElementById("tdRetail"),hd=document.getElementById("tdRetailHd");
+  if(!RETAIL||!(RETAIL.sections||[]).length){
+    el.innerHTML='<div class="card"><p class="small muted" style="margin:0">零售板块需要密码。</p>'+
+      '<div class="row" style="margin-top:10px"><button class="btn full" onclick="go(\'retail\')">前往解锁</button></div></div>';return;}
+  var picks=[];RETAIL.sections.forEach(function(sec){(sec.items||[]).forEach(function(i){picks.push([sec.title,i]);});});
+  var st=(dayIndex()*2)%Math.max(picks.length,1);
+  el.innerHTML=[picks[st],picks[(st+1)%picks.length]].filter(Boolean).map(function(p){
+    return '<div class="card" style="margin-bottom:10px"><div class="eyebrow">'+esc(p[0])+'</div>'+
+      '<div style="font-weight:640;font-size:15px;margin-bottom:6px">'+esc(p[1].t)+'</div>'+
+      '<div class="small muted">'+esc(String(p[1].body).slice(0,110))+'…</div></div>';
+  }).join("")+'<button class="btn full" onclick="go(\'retail\')">查看全部</button>';
+}
+/* ---- ENGLISH LIST ---- */
 var curScene=null;
 function renderPills(){
   document.getElementById("enPills").innerHTML=SCENES.map(function(s){
-    return '<button class="pill'+(s.id===curScene?" on":"")+'" data-s="'+attr(s.id)+'">'+esc(s.title)+'</button>';
-  }).join("");
-  document.querySelectorAll("#enPills .pill").forEach(function(b){
-    b.onclick=function(){openScene(b.dataset.s);};
-  });
+    return '<button class="pill'+(s.id===curScene?" on":"")+'" data-s="'+attr(s.id)+'">'+esc(s.title)+'</button>';}).join("");
+  document.querySelectorAll("#enPills .pill").forEach(function(b){b.onclick=function(){openScene(b.dataset.s);};});
 }
 function openScene(id){
   curScene=id;go("en");renderPills();
   var s=SCENES.filter(function(x){return x.id===id;})[0];if(!s)return;
-  var seen=ST.get("seenScenes",[]);if(seen.indexOf(id)<0){seen.push(id);ST.set("seenScenes",seen);refreshStats();}
-  var pill=document.querySelector('#enPills .pill.on');if(pill&&pill.scrollIntoView)pill.scrollIntoView({inline:"center",block:"nearest"});
-
-  var h='<div class="card" style="background:linear-gradient(155deg,#1b2836,#151d27)">'+
-    '<h2 style="font-size:21px">'+esc(s.title)+'</h2>'+
-    '<div class="tiny" style="margin:4px 0 10px">'+esc(s.en)+' · '+esc(s.tone)+'</div>'+
-    '<p class="small muted" style="margin:0">'+esc(s.intro)+'</p></div>';
-
+  var p=document.querySelector('#enPills .pill.on');if(p&&p.scrollIntoView)p.scrollIntoView({inline:"center",block:"nearest"});
+  var h='<div class="card" style="background:linear-gradient(150deg,#fff6ec,#fff 70%);border-color:#f2e2d0">'+
+   '<h2 style="font-size:21px">'+esc(s.title)+'</h2><div class="tiny" style="margin:4px 0 10px">'+esc(s.en)+' · '+esc(s.tone)+'</div>'+
+   '<p class="small muted" style="margin:0 0 13px">'+esc(s.intro)+'</p>'+
+   '<button class="btn pri full" onclick="startStudy(\''+attr(s.id)+'\',\'new\')">进入学习模式</button></div>';
   h+='<div class="sec-t">高频词表</div>';
   s.groups.forEach(function(g,gi){
     h+='<details class="grp"'+(gi===0?" open":"")+'><summary>'+esc(g.name)+'<span class="n">'+g.items.length+'</span></summary><div class="words">';
     g.items.forEach(function(it){
-      var en=it[0],zh=it[1];
-      h+='<div class="w"><div class="sp"><div class="en">'+esc(en)+'</div><div class="zh">'+esc(zh)+'</div></div>'+
-         '<button class="ib" onclick="say(\''+attr(en).replace(/\\/g,"")+'\')" aria-label="发音">'+IC_SPK+'</button>'+
-         '<button class="ib star'+(isStar(en)?" on":"")+'" data-en="'+attr(en)+'" data-zh="'+attr(zh)+'" aria-label="收藏">'+IC_STAR+'</button></div>';
-    });
-    h+='</div></details>';
-  });
-
+      h+='<div class="w"><div class="sp"><div class="en">'+esc(it[0])+'</div><div class="zh">'+esc(it[1])+'</div></div>'+
+        '<button class="ib" onclick="say(\''+sq(it[0])+'\')">'+IC_SPK+'</button>'+
+        '<button class="ib star'+(rec(it[0])?" on":"")+'" data-en="'+attr(it[0])+'" data-zh="'+attr(it[1])+'">'+IC_STAR+'</button></div>';});
+    h+='</div></details>';});
   h+='<div class="sec-t">常用句</div><div class="card" style="padding:0">';
-  s.phrases.forEach(function(p){
-    h+='<div class="ph"><div class="hd2"><div class="sp" style="flex:1"><div class="en">'+esc(p[0])+'</div>'+
-       '<div class="zh">'+esc(p[1])+'</div>'+(p[2]?'<div class="nt">'+esc(p[2])+'</div>':'')+'</div>'+
-       '<button class="ib" onclick="say(\''+attr(p[0]).replace(/\\/g,"")+'\')">'+IC_SPK+'</button>'+
-       '<button class="ib star'+(isStar(p[0])?" on":"")+'" data-en="'+attr(p[0])+'" data-zh="'+attr(p[1])+'">'+IC_STAR+'</button></div></div>';
-  });
-  h+='</div>';
-  h+='<div class="row" style="margin:16px 0 8px"><button class="btn pri full" onclick="startQuiz(\''+attr(s.id)+'\')">测验这个场景</button></div>';
-  h+='<div class="row" style="margin-bottom:24px"><button class="btn full" onclick="startQuiz(\'star\')">只测我收藏的词</button></div>';
-
+  s.phrases.forEach(function(p2){
+    h+='<div class="ph"><div class="hd2"><div class="sp" style="flex:1"><div class="en">'+esc(p2[0])+'</div><div class="zh">'+esc(p2[1])+'</div>'+
+      (p2[2]?'<div class="nt">'+esc(p2[2])+'</div>':'')+'</div>'+
+      '<button class="ib" onclick="say(\''+sq(p2[0])+'\')">'+IC_SPK+'</button>'+
+      '<button class="ib star'+(rec(p2[0])?" on":"")+'" data-en="'+attr(p2[0])+'" data-zh="'+attr(p2[1])+'">'+IC_STAR+'</button></div></div>';});
+  h+='</div><div style="height:22px"></div>';
   document.getElementById("enBody").innerHTML=h;
   document.querySelectorAll("#enBody .ib.star").forEach(function(b){
-    b.onclick=function(){var on=toggleStar(b.dataset.en,b.dataset.zh,id);b.classList.toggle("on",on);};
-  });
+    b.onclick=function(){var v=vocab(),k=K(b.dataset.en);
+      if(v[k]){delete v[k];saveVocab(v);b.classList.remove("on");}
+      else{v[k]={en:b.dataset.en,zh:b.dataset.zh,s:id,lv:0,seen:0,miss:0,due:ymd()};saveVocab(v);b.classList.add("on");}
+      refreshStats();};});
 }
-
-/* ============ QUIZ ============ */
-var Q={pool:[],i:0,ok:0,mode:""};
-function poolFor(mode){
-  var out=[];
-  if(mode==="due"){out=dueList().map(function(v){return [v.en,v.zh];});
-    if(!out.length){var v=vocab();for(var k in v)out.push([v[k].en,v[k].zh]);}
-  }else if(mode==="star"){var v2=vocab();for(var k2 in v2)out.push([v2[k2].en,v2[k2].zh]);}
-  else{
-    var s=SCENES.filter(function(x){return x.id===mode;})[0];
-    if(s){s.groups.forEach(function(g){g.items.forEach(function(i){out.push([i[0],i[1]]);});});
-          s.phrases.slice(0,8).forEach(function(p){out.push([p[0],p[1]]);});}
-  }
-  if(!out.length){SCENES.forEach(function(s){s.groups.forEach(function(g){g.items.forEach(function(i){out.push([i[0],i[1]]);});});});}
-  return out;
-}
+/* ---- STUDY MODE ---- */
+var S={q:[],i:0,shown:false,res:{yes:0,mid:0,no:0},mode:"new",sid:null,wrong:[]};
 function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
-function startQuiz(mode){
-  var all=poolFor(mode);
-  if(!all.length){alert("还没有可测验的内容，先去英语板块收藏几个词。");return;}
-  Q.all=all;Q.pool=shuffle(all).slice(0,Math.min(10,all.length));Q.i=0;Q.ok=0;Q.mode=mode;
-  go("quiz");nextQ();
+var BATCH=20;
+function posOf(sid){return (ST.get("pos",{})[sid])||0;}
+function setPos(sid,v){var p=ST.get("pos",{});p[sid]=v;ST.set("pos",p);}
+function startStudy(sid,mode,restart){
+  var s=SCENES.filter(function(x){return x.id===sid;})[0];if(!s)return;
+  var all=itemsOf(s),st=restart?0:posOf(sid);
+  if(st>=all.length)st=0;
+  if(restart)setPos(sid,0);
+  S={q:all.slice(st,st+BATCH),i:0,shown:false,res:{yes:0,mid:0,no:0},mode:mode||"new",
+     sid:sid,wrong:[],start:st,total:all.length};
+  go("study");drawCard();
+}
+function startReview(){
+  var due=dueList();
+  if(!due.length){var v=vocab(),all=[];for(var k in v)all.push(v[k]);
+    if(!all.length){alert("还没有学习记录，先进入今天的学习单元。");return;}
+    due=shuffle(all).slice(0,20);}
+  S={q:shuffle(due).slice(0,20).map(function(o){return {en:o.en,zh:o.zh,nt:"",k:"复习"};}),
+     i:0,shown:false,res:{yes:0,mid:0,no:0},mode:"review",sid:null,wrong:[]};
+  go("study");drawCard();
+}
+function drawCard(){
+  var b=document.getElementById("studyBody");
+  if(S.i>=S.q.length)return studySummary();
+  var it=S.q[S.i],pct=S.i/S.q.length*100;
+  b.innerHTML='<div class="prog"><i style="width:'+pct+'%"></i></div>'+
+   '<div class="tiny" style="display:flex;justify-content:space-between;margin-bottom:14px"><span>'+(S.i+1)+' / '+S.q.length+
+   (S.total?'　·　本单元 '+(S.start+S.i+1)+' / '+S.total:'')+'</span>'+
+   '<span>认识 '+S.res.yes+' · 模糊 '+S.res.mid+' · 不认识 '+S.res.no+'</span></div>'+
+   '<div class="sc" id="scard"><div class="kind">'+esc(it.k)+(S.mode==="review"?" · 复习":"")+'</div>'+
+   '<div class="front'+(it.en.length>26?" long":"")+'">'+esc(it.en)+'</div>'+
+   (S.shown?'<div class="back"><div class="zh">'+esc(it.zh)+'</div>'+(it.nt?'<div class="nt">'+esc(it.nt)+'</div>':'')+'</div>':'')+'</div>'+
+   '<div class="row" style="margin-bottom:12px"><button class="btn" style="flex:1" onclick="say(\''+sq(it.en)+'\')">'+IC_SPK+' 发音</button>'+
+   (S.shown?'':'<button class="btn pri" style="flex:2" onclick="reveal()">显示释义</button>')+'</div>'+
+   (S.shown?'<div class="grade"><button class="no" onclick="grade(\'no\')">不认识</button>'+
+     '<button class="mid" onclick="grade(\'mid\')">模糊</button>'+
+     '<button class="yes" onclick="grade(\'yes\')">认识</button></div>':'')+
+   '<div class="row" style="margin-top:14px"><button class="btn full" onclick="quitStudy()">退出</button></div>';
+  if(!S.shown)document.getElementById("scard").onclick=reveal;
+  say(it.en);
+}
+function reveal(){S.shown=true;drawCard();}
+function grade(g){
+  var it=S.q[S.i];S.res[g]++;gradeCard(it,g,S.sid);
+  if(g!=="yes")S.wrong.push(it);
+  S.i++;S.shown=false;drawCard();
+}
+function quitStudy(){bumpLog(S.i);if(S.sid)setPos(S.sid,S.start+S.i);go(S.mode==="review"?"today":"en");renderToday();}
+function studySummary(){
+  bumpLog(S.q.length);
+  var nxt=S.start+S.q.length;var fin=S.sid&&nxt>=S.total;
+  if(S.sid)setPos(S.sid,fin?0:nxt);
+  var t=S.q.length,r=S.res,pct=Math.round(r.yes/t*100);
+  var weak=weakList().slice(0,12);
+  document.getElementById("studyBody").innerHTML=
+   '<div class="card" style="text-align:center;background:linear-gradient(150deg,#fff6ec,#fff 70%);border-color:#f2e2d0">'+
+   '<div class="eyebrow">单元完成</div><div style="font-size:42px;font-weight:750;color:var(--ac2);margin:6px 0">'+pct+'%</div>'+
+   '<div class="muted">'+t+' 张卡片 · 认识 '+r.yes+' · 模糊 '+r.mid+' · 不认识 '+r.no+'</div>'+
+   '<div class="bar"><i style="width:'+(r.yes/t*100)+'%;background:var(--ok)"></i>'+
+   '<i style="width:'+(r.mid/t*100)+'%;background:#e0b64a"></i><i style="width:'+(r.no/t*100)+'%;background:var(--warn)"></i></div>'+
+   '<p class="small muted" style="margin:12px 0 0;text-align:left">'+
+   (r.no+r.mid===0?'全部认识。这一单元会在 30 天后再出现一次。':
+    '标记为「不认识」的会在明天再出现，「模糊」的两天后。认识的按 4·7·15·30 天逐步拉长间隔。')+'</p></div>'+
+   (S.wrong.length?'<div class="sec-t">这轮需要重点记的</div><div class="card" style="padding:0">'+
+     S.wrong.map(function(w){return '<div class="ph"><div class="hd2"><div style="flex:1"><div class="en">'+esc(w.en)+'</div>'+
+       '<div class="zh">'+esc(w.zh)+'</div></div><button class="ib" onclick="say(\''+sq(w.en)+'\')">'+IC_SPK+'</button></div></div>';}).join("")+'</div>':'')+
+   (weak.length?'<div class="sec-t">长期薄弱（累计答错最多）</div><div class="card" style="padding:0">'+
+     weak.map(function(w){return '<div class="ph"><div class="hd2"><div style="flex:1"><div class="en">'+esc(w.en)+'</div>'+
+       '<div class="zh">'+esc(w.zh)+'</div></div><span class="chip" style="align-self:center">错 '+(w.miss||0)+' 次</span></div></div>';}).join("")+'</div>':'')+
+   (S.sid&&!fin?'<div class="row" style="margin:16px 0 9px"><button class="btn pri full" onclick="startStudy(\''+attr(S.sid)+'\',\'new\')">继续下一组（还剩 '+(S.total-nxt)+' 张）</button></div>':
+     (S.sid?'<div class="card" style="border-color:#bfe6d6;background:var(--okbg);margin-top:14px"><p class="small" style="margin:0;color:var(--ok)">这个单元 '+S.total+' 张卡片全部过完了。下次进入会从头再来一轮。</p></div>':''))+
+   '<div class="row" style="margin:14px 0 9px"><button class="btn'+(S.sid&&!fin?'':' pri')+' full" onclick="startQuiz()">用测验巩固</button></div>'+
+   '<div class="row" style="margin-bottom:24px"><button class="btn full" onclick="go(\'today\');renderToday()">回到今日</button></div>';
+  renderToday();
+}
+/* ---- QUIZ (multi-format) ---- */
+var Q={pool:[],i:0,ok:0,items:[]};
+function startQuiz(){
+  var src=S.wrong.length?S.wrong:dueList();
+  if(!src.length){var v=vocab();for(var k in v)src.push(v[k]);}
+  if(!src.length){alert("先学一个单元再来测验。");return;}
+  var all=[];SCENES.forEach(function(s){itemsOf(s).forEach(function(i){all.push(i);});});
+  Q={pool:shuffle(src).slice(0,10),i:0,ok:0,items:all};
+  go("study");nextQ();
 }
 function nextQ(){
-  var body=document.getElementById("quizBody");
+  var b=document.getElementById("studyBody");
   if(Q.i>=Q.pool.length){
     var pct=Math.round(Q.ok/Q.pool.length*100);
-    body.innerHTML='<div class="card qbox"><div class="eyebrow">完成</div>'+
-      '<div style="font-size:44px;font-weight:750;color:var(--ac2);margin:10px 0">'+pct+'%</div>'+
-      '<div class="muted">答对 '+Q.ok+' / '+Q.pool.length+'</div>'+
-      '<p class="small muted" style="margin:16px 0 0">答错的词已加入生词本，会按 1·2·4·7·15·30 天的间隔安排复习。</p></div>'+
-      '<div class="row"><button class="btn full" onclick="startQuiz(\''+attr(Q.mode)+'\')">再来一轮</button></div>'+
-      '<div class="row" style="margin-top:9px"><button class="btn full" onclick="go(\'today\')">回到今日</button></div>';
-    refreshStats();return;
-  }
-  var q=Q.pool[Q.i];
-  var wrong=shuffle(Q.all.filter(function(x){return x[1]!==q[1];})).slice(0,3);
-  var opts=shuffle([q].concat(wrong));
-  var enToZh=Q.i%2===0;
-  body.innerHTML='<div class="prog"><i style="width:'+(Q.i/Q.pool.length*100)+'%"></i></div>'+
-    '<div class="tiny" style="margin-bottom:14px">第 '+(Q.i+1)+' / '+Q.pool.length+' 题</div>'+
-    '<div class="card qbox"><div class="eyebrow">'+(enToZh?"这句/这个词是什么意思":"用英语怎么说")+'</div>'+
-    '<div class="qq">'+esc(enToZh?q[0]:q[1])+'</div>'+
-    (enToZh?'<button class="btn" onclick="say(\''+attr(q[0]).replace(/\\/g,"")+'\')">'+IC_SPK+' 听一遍</button>':'')+'</div>'+
-    '<div id="opts">'+opts.map(function(o,i){
-      return '<button class="opt" data-i="'+i+'" data-ok="'+(o[1]===q[1]?1:0)+'">'+esc(enToZh?o[1]:o[0])+'</button>';
-    }).join("")+'</div>';
-  document.querySelectorAll("#opts .opt").forEach(function(b){
-    b.onclick=function(){
-      if(b.dataset.done)return;
-      document.querySelectorAll("#opts .opt").forEach(function(x){x.dataset.done=1;
-        if(x.dataset.ok==="1")x.classList.add("right");});
-      var ok=b.dataset.ok==="1";
-      if(!ok)b.classList.add("wrong");else Q.ok++;
-      if(!ok){var v=vocab(),k=keyOf(q[0]);if(!v[k]){v[k]={en:q[0],zh:q[1],lv:0,due:ymd()};saveVocab(v);}}
-      grade(q[0],ok);
-      if(ok)say(q[0]);
-      setTimeout(function(){Q.i++;nextQ();},ok?700:1400);
-    };
+    b.innerHTML='<div class="card" style="text-align:center"><div class="eyebrow">测验完成</div>'+
+     '<div style="font-size:42px;font-weight:750;color:var(--ac2);margin:6px 0">'+pct+'%</div>'+
+     '<div class="muted">答对 '+Q.ok+' / '+Q.pool.length+'</div></div>'+
+     '<div class="row"><button class="btn full" onclick="startQuiz()">再来一轮</button></div>'+
+     '<div class="row" style="margin-top:9px"><button class="btn full" onclick="go(\'today\');renderToday()">回到今日</button></div>';
+    renderToday();return;}
+  var q=Q.pool[Q.i],mode=Q.i%4;
+  var others=shuffle(Q.items.filter(function(x){return x.zh!==q.zh;})).slice(0,3);
+  var prog='<div class="prog"><i style="width:'+(Q.i/Q.pool.length*100)+'%"></i></div><div class="tiny" style="margin-bottom:14px">第 '+(Q.i+1)+' / '+Q.pool.length+' 题</div>';
+  if(mode===3){ /* spelling */
+    b.innerHTML=prog+'<div class="card" style="text-align:center"><div class="eyebrow">拼出英文</div>'+
+     '<div style="font-size:22px;font-weight:660;margin:10px 0 6px">'+esc(q.zh)+'</div>'+
+     '<div class="tiny">'+esc(q.en.replace(/[A-Za-z]/g,"·").slice(0,40))+'</div></div>'+
+     '<input class="inp" id="spin" autocomplete="off" autocapitalize="off" placeholder="输入英文后回车">'+
+     '<div class="row" style="margin-top:10px"><button class="btn full" id="spgo">提交</button></div>'+
+     '<div class="row" style="margin-top:9px"><button class="btn full" onclick="say(\''+sq(q.en)+'\')">'+IC_SPK+' 听一遍</button></div>';
+    var go2=function(){
+      var val=(document.getElementById("spin").value||"").trim().toLowerCase();
+      var ok=val===q.en.toLowerCase().trim();
+      if(ok)Q.ok++;gradeCard(q,ok?"yes":"no",null);
+      b.insertAdjacentHTML("beforeend",'<div class="card" style="margin-top:12px;border-color:'+(ok?"var(--ok)":"var(--warn)")+'">'+
+        (ok?'<b style="color:var(--ok)">正确</b>':'<b style="color:var(--warn)">正确答案</b>')+'<div style="margin-top:5px;font-weight:620">'+esc(q.en)+'</div></div>');
+      say(q.en);setTimeout(function(){Q.i++;nextQ();},ok?900:1900);};
+    document.getElementById("spgo").onclick=go2;
+    document.getElementById("spin").onkeydown=function(e){if(e.key==="Enter")go2();};
+    setTimeout(function(){var el=document.getElementById("spin");if(el)el.focus();},80);
+    return;}
+  var enToZh=mode===0,listen=mode===2;
+  var opts=shuffle([q].concat(others));
+  b.innerHTML=prog+'<div class="card" style="text-align:center"><div class="eyebrow">'+
+    (listen?"听音选义":enToZh?"这个是什么意思":"用英语怎么说")+'</div>'+
+    '<div style="font-size:'+((listen?0:(enToZh?q.en:q.zh)).length>26?"20":"25")+'px;font-weight:700;margin:12px 0">'+
+      (listen?'🔊':esc(enToZh?q.en:q.zh))+'</div>'+
+    ((listen||enToZh)?'<button class="btn" onclick="say(\''+sq(q.en)+'\')">'+IC_SPK+' 播放</button>':'')+'</div>'+
+    '<div id="opts">'+opts.map(function(o){
+      return '<button class="opt" data-ok="'+(o.zh===q.zh?1:0)+'">'+esc((listen||enToZh)?o.zh:o.en)+'</button>';}).join("")+'</div>';
+  if(listen)setTimeout(function(){say(q.en);},250);
+  document.querySelectorAll("#opts .opt").forEach(function(bt){
+    bt.onclick=function(){
+      if(bt.dataset.done)return;
+      document.querySelectorAll("#opts .opt").forEach(function(x){x.dataset.done=1;if(x.dataset.ok==="1")x.classList.add("right");});
+      var ok=bt.dataset.ok==="1";if(!ok)bt.classList.add("wrong");else Q.ok++;
+      gradeCard(q,ok?"yes":"no",null);say(q.en);
+      setTimeout(function(){Q.i++;nextQ();},ok?800:1600);};});
+}
+/* ---- MAP ---- */
+var M={feat:null,map:{},z:1,ox:0,oy:0,drag:false,px:0,py:0,moved:0,pinch:0,W:0,H:0,hover:null};
+var cv=document.getElementById("map"),cx=cv?cv.getContext("2d"):null;
+function sizeMap(){
+  if(!cv)return;var w=cv.parentNode.clientWidth||360;var h=Math.round(Math.min(w*0.62,460));
+  var dpr=Math.min(window.devicePixelRatio||1,2);
+  cv.width=w*dpr;cv.height=h*dpr;cv.style.height=h+"px";cx.setTransform(dpr,0,0,dpr,0,0);
+  M.W=w;M.H=h;drawMap();
+}
+function base(){return M.W/360;}
+function pxOf(lon,lat){var b=base()*M.z;return [(lon+180)*b+M.ox,(84-lat)*b*(180/168)+M.oy];}
+function lonlatOf(x,y){var b=base()*M.z;return [(x-M.ox)/b-180,84-(y-M.oy)/(b*(180/168))];}
+function fitMap(){M.z=1;M.ox=0;M.oy=(M.H-base()*180*(168/180))/2;}
+function drawMap(){
+  if(!cx)return;
+  cx.clearRect(0,0,M.W,M.H);
+  cx.fillStyle="#dce7f2";cx.fillRect(0,0,M.W,M.H);
+  if(!M.feat){cx.fillStyle="#9aa8ba";cx.font="13px sans-serif";cx.textAlign="center";
+    cx.fillText("地图数据加载中…",M.W/2,M.H/2);cx.textAlign="left";return;}
+  M.feat.forEach(function(f,fi){
+    var known=M.map[fi];
+    cx.beginPath();
+    f.polys.forEach(function(ring){
+      for(var i=0;i<ring.length;i++){var p=pxOf(ring[i][0],ring[i][1]);
+        if(i===0)cx.moveTo(p[0],p[1]);else cx.lineTo(p[0],p[1]);}
+      cx.closePath();});
+    cx.fillStyle=known?(M.hover===fi?"#f0b070":"#e8d3ba"):"#eef1f4";
+    cx.fill();
+    cx.lineWidth=.6;cx.strokeStyle=known?"#c99a63":"#d7dde4";cx.stroke();
   });
 }
-
-/* ============ WORLD: globe ============ */
-var G={rot:20,tilt:-12,drag:false,px:0,py:0,land:null,r:0,cx:0,cy:0,spin:true};
-var cv=document.getElementById("globe"),ctx=cv.getContext("2d");
-function sizeGlobe(){
-  var w=cv.parentNode.clientWidth||360,dpr=Math.min(window.devicePixelRatio||1,2);
-  cv.width=w*dpr;cv.height=w*dpr;cv.style.height=w+"px";
-  ctx.setTransform(dpr,0,0,dpr,0,0);
-  G.r=w*0.42;G.cx=w/2;G.cy=w/2;
+function ptIn(ring,x,y){
+  var inside=false;
+  for(var i=0,j=ring.length-1;i<ring.length;j=i++){
+    var xi=ring[i][0],yi=ring[i][1],xj=ring[j][0],yj=ring[j][1];
+    if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))inside=!inside;}
+  return inside;
 }
-function proj(lat,lon){
-  var p=(lat)*Math.PI/180, l=(lon+G.rot)*Math.PI/180, t=G.tilt*Math.PI/180;
-  var x=Math.cos(p)*Math.sin(l);
-  var y=Math.cos(t)*Math.sin(p)-Math.sin(t)*Math.cos(p)*Math.cos(l);
-  var z=Math.sin(t)*Math.sin(p)+Math.cos(t)*Math.cos(p)*Math.cos(l);
-  return {x:G.cx+x*G.r, y:G.cy-y*G.r, v:z>0, z:z};
+function featAt(lon,lat){
+  for(var i=0;i<M.feat.length;i++){
+    var f=M.feat[i];
+    if(lon<f.bb[0]||lon>f.bb[2]||lat<f.bb[1]||lat>f.bb[3])continue;
+    for(var j=0;j<f.polys.length;j++)if(ptIn(f.polys[j],lon,lat))return i;}
+  return -1;
 }
-function drawGlobe(){
-  var w=cv.clientWidth||360;
-  ctx.clearRect(0,0,w,w);
-  // atmosphere
-  var ag=ctx.createRadialGradient(G.cx,G.cy,G.r*.92,G.cx,G.cy,G.r*1.16);
-  ag.addColorStop(0,"rgba(106,169,240,.16)");ag.addColorStop(1,"rgba(106,169,240,0)");
-  ctx.fillStyle=ag;ctx.beginPath();ctx.arc(G.cx,G.cy,G.r*1.16,0,7);ctx.fill();
-  // ocean
-  var og=ctx.createRadialGradient(G.cx-G.r*.35,G.cy-G.r*.4,G.r*.1,G.cx,G.cy,G.r);
-  og.addColorStop(0,"#1d3348");og.addColorStop(.65,"#132434");og.addColorStop(1,"#0d1a26");
-  ctx.fillStyle=og;ctx.beginPath();ctx.arc(G.cx,G.cy,G.r,0,7);ctx.fill();
-  ctx.strokeStyle="rgba(106,169,240,.28)";ctx.lineWidth=1;ctx.stroke();
-  // graticule
-  ctx.strokeStyle="rgba(140,175,210,.13)";ctx.lineWidth=.8;
-  for(var lat=-60;lat<=60;lat+=30){
-    ctx.beginPath();var st=false;
-    for(var lo=-180;lo<=180;lo+=4){var p=proj(lat,lo);
-      if(p.v){if(!st){ctx.moveTo(p.x,p.y);st=true;}else ctx.lineTo(p.x,p.y);}else st=false;}
-    ctx.stroke();
-  }
-  for(var lon=-180;lon<180;lon+=30){
-    ctx.beginPath();var st2=false;
-    for(var la=-90;la<=90;la+=4){var q=proj(la,lon);
-      if(q.v){if(!st2){ctx.moveTo(q.x,q.y);st2=true;}else ctx.lineTo(q.x,q.y);}else st2=false;}
-    ctx.stroke();
-  }
-  // land (if loaded)
-  if(G.land){
-    ctx.fillStyle="rgba(96,132,112,.55)";ctx.strokeStyle="rgba(150,200,175,.5)";ctx.lineWidth=.7;
-    G.land.forEach(function(poly){
-      var started=false,any=false;ctx.beginPath();
-      for(var i=0;i<poly.length;i++){
-        var p=proj(poly[i][1],poly[i][0]);
-        if(p.v){any=true;if(!started){ctx.moveTo(p.x,p.y);started=true;}else ctx.lineTo(p.x,p.y);}
-        else{started=false;}
-      }
-      if(any){ctx.closePath();ctx.fill();ctx.stroke();}
-    });
-  }
-  // markers
-  GEO.forEach(function(c){
-    var p=proj(c.lat,c.lon);if(!p.v)return;
-    var a=Math.max(.25,p.z);
-    ctx.beginPath();ctx.arc(p.x,p.y,5.5,0,7);
-    ctx.fillStyle="rgba(240,160,75,"+(a*.22)+")";ctx.fill();
-    ctx.beginPath();ctx.arc(p.x,p.y,2.6,0,7);
-    ctx.fillStyle="rgba(255,200,130,"+a+")";ctx.fill();
+function evPt(e){var r=cv.getBoundingClientRect();var t=e.touches&&e.touches[0]?e.touches[0]:e;return [t.clientX-r.left,t.clientY-r.top];}
+function zoomAt(f,cxp,cyp){
+  var nz=Math.max(1,Math.min(14,M.z*f));var k=nz/M.z;
+  M.ox=cxp-(cxp-M.ox)*k;M.oy=cyp-(cyp-M.oy)*k;M.z=nz;clampMap();drawMap();
+}
+function zoomBy(f){zoomAt(f,M.W/2,M.H/2);}
+function resetMap(){fitMap();drawMap();}
+function clampMap(){
+  var w=base()*M.z*360,h=base()*M.z*180*(168/180);
+  M.ox=Math.min(0,Math.max(M.W-w,M.ox));
+  if(h<=M.H)M.oy=(M.H-h)/2;else M.oy=Math.min(0,Math.max(M.H-h,M.oy));
+}
+if(cv){
+  cv.addEventListener("mousedown",function(e){M.drag=true;M.moved=0;var p=evPt(e);M.px=p[0];M.py=p[1];});
+  window.addEventListener("mousemove",function(e){
+    if(!M.drag){if(cur!=="geo"||!M.feat)return;
+      var p=evPt(e);if(p[0]<0||p[0]>M.W||p[1]<0||p[1]>M.H)return;
+      var ll=lonlatOf(p[0],p[1]),fi=featAt(ll[0],ll[1]);
+      var tip=document.getElementById("mtip");
+      if(fi>=0&&M.map[fi]){M.hover=fi;tip.textContent=M.map[fi].zh;tip.classList.add("on");}
+      else{M.hover=null;tip.classList.remove("on");}
+      drawMap();return;}
+    var p2=evPt(e);M.ox+=p2[0]-M.px;M.oy+=p2[1]-M.py;M.moved+=Math.abs(p2[0]-M.px)+Math.abs(p2[1]-M.py);
+    M.px=p2[0];M.py=p2[1];clampMap();drawMap();});
+  window.addEventListener("mouseup",function(e){
+    if(M.drag&&M.moved<5)tapMap(e);M.drag=false;});
+  cv.addEventListener("wheel",function(e){e.preventDefault();var p=evPt(e);zoomAt(e.deltaY<0?1.18:1/1.18,p[0],p[1]);},{passive:false});
+  cv.addEventListener("touchstart",function(e){
+    if(e.touches.length===2){M.pinch=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);M.drag=false;return;}
+    M.drag=true;M.moved=0;var p=evPt(e);M.px=p[0];M.py=p[1];},{passive:true});
+  cv.addEventListener("touchmove",function(e){
+    if(e.touches.length===2){e.preventDefault();
+      var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      if(M.pinch){var r=cv.getBoundingClientRect();
+        zoomAt(d/M.pinch,(e.touches[0].clientX+e.touches[1].clientX)/2-r.left,(e.touches[0].clientY+e.touches[1].clientY)/2-r.top);}
+      M.pinch=d;return;}
+    if(!M.drag)return;e.preventDefault();var p=evPt(e);
+    M.ox+=p[0]-M.px;M.oy+=p[1]-M.py;M.moved+=Math.abs(p[0]-M.px)+Math.abs(p[1]-M.py);
+    M.px=p[0];M.py=p[1];clampMap();drawMap();},{passive:false});
+  cv.addEventListener("touchend",function(e){
+    if(M.drag&&M.moved<7&&e.changedTouches&&e.changedTouches[0])tapMap({clientX:e.changedTouches[0].clientX,clientY:e.changedTouches[0].clientY});
+    M.drag=false;M.pinch=0;});
+}
+function tapMap(e){
+  if(!M.feat)return;var p=evPt(e);var ll=lonlatOf(p[0],p[1]);var fi=featAt(ll[0],ll[1]);
+  if(fi>=0&&M.map[fi])showCountry(M.map[fi].id);
+  else if(fi>=0){var tip=document.getElementById("mtip");tip.textContent=(M.feat[fi].name||"这个国家")+" · 暂无资料";tip.classList.add("on");
+    setTimeout(function(){tip.classList.remove("on");},1800);}
+}
+function decodeTopo(topo,objName){
+  var o=topo.objects[objName],tr=topo.transform,arcs=topo.arcs;
+  var cache=arcs.map(function(a){var x=0,y=0,out=[];
+    for(var i=0;i<a.length;i++){x+=a[i][0];y+=a[i][1];
+      out.push([x*tr.scale[0]+tr.translate[0],y*tr.scale[1]+tr.translate[1]]);}return out;});
+  function ring(idx){var out=[];idx.forEach(function(a){var rev=a<0,ar=cache[rev?~a:a].slice();
+    if(rev)ar.reverse();if(out.length)ar.shift();out=out.concat(ar);});return out;}
+  var feats=[];
+  (o.geometries||[]).forEach(function(g){
+    var polys=[];
+    if(g.type==="Polygon")g.arcs.forEach(function(r){polys.push(ring(r));});
+    else if(g.type==="MultiPolygon")g.arcs.forEach(function(pp){pp.forEach(function(r){polys.push(ring(r));});});
+    if(!polys.length)return;
+    var bb=[180,90,-180,-90];
+    polys.forEach(function(r){r.forEach(function(pt){
+      if(pt[0]<bb[0])bb[0]=pt[0];if(pt[1]<bb[1])bb[1]=pt[1];
+      if(pt[0]>bb[2])bb[2]=pt[0];if(pt[1]>bb[3])bb[3]=pt[1];});});
+    feats.push({polys:polys,bb:bb,name:(g.properties&&g.properties.name)||"",id:g.id});
   });
+  return feats;
 }
-function hitCountry(mx,my){
-  var best=null,bd=1e9;
-  GEO.forEach(function(c){
-    var p=proj(c.lat,c.lon);if(!p.v)return;
-    var d=Math.hypot(p.x-mx,p.y-my);
-    if(d<20&&d<bd){bd=d;best=c;}
-  });
-  return best;
-}
-function ptOf(e){
-  var r=cv.getBoundingClientRect();
-  var t=e.touches?e.touches[0]:e;
-  return {x:t.clientX-r.left,y:t.clientY-r.top};
-}
-var moved=0;
-function dStart(e){G.drag=true;G.spin=false;moved=0;var p=ptOf(e);G.px=p.x;G.py=p.y;}
-function dMove(e){
-  if(!G.drag)return;e.preventDefault();
-  var p=ptOf(e);var dx=p.x-G.px,dy=p.y-G.py;
-  moved+=Math.abs(dx)+Math.abs(dy);
-  G.rot+=dx*0.32;G.tilt=Math.max(-80,Math.min(80,G.tilt+dy*0.28));
-  G.px=p.x;G.py=p.y;drawGlobe();
-}
-function dEnd(e){
-  if(G.drag&&moved<6){
-    var p=ptOf(e.changedTouches?{touches:e.changedTouches}:e);
-    var c=hitCountry(p.x,p.y);if(c)showCountry(c.id);
-  }
-  G.drag=false;setTimeout(function(){G.spin=true;},2600);
-}
-cv.addEventListener("mousedown",dStart);window.addEventListener("mousemove",dMove);window.addEventListener("mouseup",dEnd);
-cv.addEventListener("touchstart",dStart,{passive:true});
-cv.addEventListener("touchmove",dMove,{passive:false});
-cv.addEventListener("touchend",dEnd);
-function tick(){if(G.spin&&cur==="geo"&&document.getElementById("geoDetail").style.display==="none"){G.rot+=0.055;drawGlobe();}requestAnimationFrame(tick);}
-
-/* optional: real coastlines from CDN, silently skipped if offline */
-function loadLand(){
-  var urls=["https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json",
-            "https://unpkg.com/world-atlas@2/land-110m.json"];
-  (function tryNext(i){
-    if(i>=urls.length)return;
-    fetch(urls[i]).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(topo){
-      var o=topo.objects.land, tr=topo.transform, arcs=topo.arcs;
-      function decode(arc){
-        var x=0,y=0,out=[];
-        for(var i2=0;i2<arc.length;i2++){
-          x+=arc[i2][0];y+=arc[i2][1];
-          out.push([x*tr.scale[0]+tr.translate[0], y*tr.scale[1]+tr.translate[1]]);
-        }
-        return out;
-      }
-      var cache=arcs.map(decode);
-      function ring(idx){
-        var out=[];
-        idx.forEach(function(a){
-          var rev=a<0, ar=cache[rev?~a:a].slice();
-          if(rev)ar.reverse();
-          if(out.length)ar.shift();
-          out=out.concat(ar);
-        });
-        return out;
-      }
-      var polys=[];
-      function walk(g){
-        if(g.type==="Polygon")g.arcs.forEach(function(r){polys.push(ring(r));});
-        else if(g.type==="MultiPolygon")g.arcs.forEach(function(p){p.forEach(function(r){polys.push(ring(r));});});
-        else if(g.geometries)g.geometries.forEach(walk);
-      }
-      walk(o);
-      G.land=polys.filter(function(p){return p.length>6;});
-      drawGlobe();
-    }).catch(function(){tryNext(i+1);});
+function loadMap(){
+  var urls=["https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "https://unpkg.com/world-atlas@2/countries-110m.json"];
+  (function nx(i){
+    if(i>=urls.length){drawMap();return;}
+    fetch(urls[i]).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(t){
+      M.feat=decodeTopo(t,"countries");
+      GEOIDX.forEach(function(c){
+        var fi=featAt(c.lon,c.lat);
+        if(fi>=0&&!M.map[fi])M.map[fi]=c;
+      });
+      fitMap();drawMap();
+    }).catch(function(){nx(i+1);});
   })(0);
 }
-
-/* ============ WORLD: list & detail ============ */
-var curCont="全部";
+/* ---- COUNTRY ---- */
+var curCont="全部",DETAIL={};
 function renderGeoList(){
-  var conts=["全部"];GEO.forEach(function(c){if(conts.indexOf(c.cont)<0)conts.push(c.cont);});
-  document.getElementById("contPills").innerHTML=conts.map(function(c){
-    return '<button class="pill'+(c===curCont?" on":"")+'" data-c="'+attr(c)+'">'+esc(c)+'</button>';
-  }).join("");
-  document.querySelectorAll("#contPills .pill").forEach(function(b){
-    b.onclick=function(){curCont=b.dataset.c;renderGeoList();};
-  });
-  var list=GEO.filter(function(c){return curCont==="全部"||c.cont===curCont;});
-  document.getElementById("geoGrid").innerHTML=
-    '<div class="ccards tight">'+list.map(function(c){
-      return '<div class="cc" style="cursor:pointer" data-id="'+attr(c.id)+'"><div class="bd">'+
-        '<div style="font-size:26px;line-height:1.2">'+c.flag+'</div>'+
-        '<h4 style="margin:6px 0 3px">'+esc(c.zh)+'</h4>'+
-        '<p style="font-size:11.5px;color:var(--tx3)">'+esc(c.en)+' · '+esc(c.cont)+'</p></div></div>';
-    }).join("")+'</div>';
-  document.querySelectorAll("#geoGrid .cc").forEach(function(el){
-    el.onclick=function(){showCountry(el.dataset.id);};
-  });
+  var cs=["全部"];GEOIDX.forEach(function(c){if(cs.indexOf(c.cont)<0)cs.push(c.cont);});
+  document.getElementById("contPills").innerHTML=cs.map(function(c){
+    return '<button class="pill'+(c===curCont?" on":"")+'" data-c="'+attr(c)+'">'+esc(c)+'</button>';}).join("");
+  document.querySelectorAll("#contPills .pill").forEach(function(b){b.onclick=function(){curCont=b.dataset.c;renderGeoList();};});
+  var list=GEOIDX.filter(function(c){return curCont==="全部"||c.cont===curCont;});
+  document.getElementById("geoGrid").innerHTML='<div class="tiny" style="margin-bottom:8px">共 '+list.length+' 个国家</div><div class="ccards tight">'+
+    list.map(function(c){return '<div class="cc" style="cursor:pointer" data-id="'+attr(c.id)+'"><div class="bd">'+
+      '<div style="font-size:24px;line-height:1.2">'+c.flag+(c.lvl===2?' <span class="chip ok" style="font-size:9px;padding:1px 6px;vertical-align:middle">深度</span>':'')+'</div>'+
+      '<h4 style="margin:6px 0 3px">'+esc(c.zh)+'</h4><p style="font-size:11.5px;color:var(--tx3)">'+esc(c.en)+'</p></div></div>';}).join("")+'</div>';
+  document.querySelectorAll("#geoGrid .cc").forEach(function(el){el.onclick=function(){showCountry(el.dataset.id);};});
 }
-function randomCountry(){showCountry(GEO[Math.floor(Math.random()*GEO.length)].id);}
-function backToGlobe(){
-  document.getElementById("geoDetail").style.display="none";
-  document.getElementById("geoList").style.display="";
-  window.scrollTo(0,0);
-}
+function randomCountry(){showCountry(GEOIDX[Math.floor(Math.random()*GEOIDX.length)].id);}
+function backToMap(){document.getElementById("geoDetail").style.display="none";
+  document.getElementById("geoList").style.display="";window.scrollTo(0,0);setTimeout(sizeMap,30);}
 function wikiImg(el,title){
   fetch("https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(title))
-    .then(function(r){return r.ok?r.json():Promise.reject();})
-    .then(function(j){
-      var u=(j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source);
-      if(u){var im=new Image();im.onload=function(){el.innerHTML="";el.appendChild(im);};im.src=u;im.alt=title;}
-    }).catch(function(){});
+   .then(function(r){return r.ok?r.json():Promise.reject();}).then(function(j){
+     var u=(j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source);
+     if(u){var im=new Image();im.onload=function(){el.innerHTML="";el.appendChild(im);};im.src=u;}}).catch(function(){});
+}
+function miniMap(canvas,cid){
+  var c=GEOIDX.filter(function(x){return x.id===cid;})[0];
+  if(!M.feat||!canvas||!c)return;
+  var fi=-1;for(var k in M.map)if(M.map[k].id===cid){fi=+k;break;}
+  if(fi<0)fi=featAt(c.lon,c.lat);
+  if(fi<0)return;
+  var f=M.feat[fi],ctx2=canvas.getContext("2d");
+  var w=canvas.parentNode.clientWidth,h=190,dpr=Math.min(window.devicePixelRatio||1,2);
+  canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width="100%";canvas.style.height=h+"px";ctx2.setTransform(dpr,0,0,dpr,0,0);
+  var bb=f.bb,pad=.12;
+  var dw=(bb[2]-bb[0])||1,dh=(bb[3]-bb[1])||1;
+  var sc=Math.min(w/(dw*(1+pad*2)),h/(dh*(1+pad*2)));
+  var cxm=(bb[0]+bb[2])/2,cym=(bb[1]+bb[3])/2;
+  function P(lon,lat){return [w/2+(lon-cxm)*sc,h/2-(lat-cym)*sc];}
+  ctx2.fillStyle="#eef3f8";ctx2.fillRect(0,0,w,h);
+  ctx2.beginPath();
+  f.polys.forEach(function(r){for(var i=0;i<r.length;i++){var p=P(r[i][0],r[i][1]);if(i===0)ctx2.moveTo(p[0],p[1]);else ctx2.lineTo(p[0],p[1]);}ctx2.closePath();});
+  ctx2.fillStyle="#e8d3ba";ctx2.fill();ctx2.lineWidth=1;ctx2.strokeStyle="#c08a4e";ctx2.stroke();
+  var cp=P(c.lon,c.lat);
+  ctx2.beginPath();ctx2.arc(cp[0],cp[1],4,0,7);ctx2.fillStyle="#cf4a2e";ctx2.fill();
+  ctx2.strokeStyle="#fff";ctx2.lineWidth=1.6;ctx2.stroke();
 }
 function showCountry(id){
-  var c=GEO.filter(function(x){return x.id===id;})[0];if(!c)return;
-  go("geo");
-  document.getElementById("geoList").style.display="none";
+  var c=GEOIDX.filter(function(x){return x.id===id;})[0];if(!c)return;
+  go("geo");document.getElementById("geoList").style.display="none";
   var d=document.getElementById("geoDetail");d.style.display="";
-  d.innerHTML=
-    '<button class="back" onclick="backToGlobe()">← 返回地球</button>'+
-    '<div class="card" style="background:linear-gradient(155deg,#1b2836,#151d27)">'+
-      '<div style="display:flex;gap:14px;align-items:center"><div class="cflag">'+c.flag+'</div>'+
-      '<div><h2 style="font-size:23px">'+esc(c.zh)+'</h2><div class="tiny">'+esc(c.en)+' · '+esc(c.cont)+'</div></div></div>'+
-      '<div class="facts">'+
-        '<div class="fact"><b>首都</b><span>'+esc(c.capital)+'</span></div>'+
-        '<div class="fact"><b>人口</b><span>'+esc(c.pop)+'</span></div>'+
-        '<div class="fact"><b>面积</b><span>'+esc(c.area)+'</span></div>'+
-        '<div class="fact"><b>语言</b><span>'+esc(c.langs)+'</span></div>'+
-        '<div class="fact"><b>货币</b><span>'+esc(c.cur)+'</span></div>'+
-        '<div class="fact"><b>坐标</b><span>'+c.lat.toFixed(1)+'°, '+c.lon.toFixed(1)+'°</span></div>'+
-      '</div></div>'+
-    '<div class="sec-t">自然地理</div><div class="card"><p style="margin:0" class="muted">'+esc(c.geo)+'</p></div>'+
-    '<div class="sec-t">人文特征</div><div class="card"><p style="margin:0" class="muted">'+esc(c.culture)+'</p></div>'+
-    '<div class="sec-t">代表事物</div><div class="ccards" id="ccWrap">'+
-      c.cards.map(function(k,i){
-        return '<div class="cc"><div class="img" id="ci'+i+'"><span class="ph2">'+esc(k.t)+'</span></div>'+
-          '<div class="bd"><div class="tp">'+esc(k.t)+'</div><h4>'+esc(k.n)+'</h4>'+
-          '<p>'+esc(k.d)+'</p>'+
-          '<div style="margin-top:8px"><a href="https://en.wikipedia.org/wiki/'+encodeURIComponent(k.w)+'" target="_blank" rel="noopener" class="tiny">维基百科 ↗</a></div>'+
-          '</div></div>';
-      }).join("")+'</div>'+
-    '<div class="sec-t">延伸观看</div><div class="card"><div class="row">'+
-      c.videos.map(function(v){
-        return '<a class="btn" href="https://www.youtube.com/results?search_query='+encodeURIComponent(v[1])+'" target="_blank" rel="noopener">▶ '+esc(v[0])+'</a>';
-      }).join("")+'</div></div>'+
-    '<div class="sec-t">冷知识</div><div class="card" style="border-color:rgba(240,160,75,.28);background:rgba(240,160,75,.06)">'+
-      '<p style="margin:0;color:var(--ac2)">'+esc(c.fact)+'</p></div>'+
-    '<div class="row" style="margin:16px 0 26px"><button class="btn full" onclick="randomCountry()">换一个国家</button></div>';
-  c.cards.forEach(function(k,i){var el=document.getElementById("ci"+i);if(el)wikiImg(el,k.w);});
+  d.innerHTML='<button class="back" onclick="backToMap()">← 返回地图</button><div class="spin"></div>';
   window.scrollTo(0,0);
+  var done=function(det){renderCountry(c,det);};
+  if(DETAIL[id])return done(DETAIL[id]);
+  fetch("data/geo/"+id+".json").then(function(r){return r.ok?r.json():Promise.reject();})
+   .then(function(j){DETAIL[id]=j;done(j);}).catch(function(){DETAIL[id]=null;done(null);});
 }
-
-/* ============ RETAIL ============ */
+function renderCountry(c,det){
+  det=det||{};
+  var h='<button class="back" onclick="backToMap()">← 返回地图</button>'+
+   '<div class="card" style="background:linear-gradient(150deg,#fff6ec,#fff 70%);border-color:#f2e2d0">'+
+   '<div style="display:flex;gap:14px;align-items:center"><div class="cflag">'+c.flag+'</div>'+
+   '<div><h2 style="font-size:23px">'+esc(c.zh)+'</h2><div class="tiny">'+esc(c.en)+' · '+esc(c.cont)+'</div></div></div>'+
+   '<div class="facts">'+
+   '<div class="fact"><b>首都</b><span>'+esc(c.cap)+'</span></div>'+
+   '<div class="fact"><b>人口</b><span>'+esc(c.pop)+'</span></div>'+
+   '<div class="fact"><b>语言</b><span>'+esc(c.lang)+'</span></div>'+
+   '<div class="fact"><b>货币</b><span>'+esc(c.cur)+'</span></div></div></div>'+
+   '<div class="card" style="padding:0;overflow:hidden"><canvas id="cmap"></canvas></div>';
+  if(det.geo)h+='<div class="sec-t">自然地理</div><div class="card"><p style="margin:0" class="muted">'+esc(det.geo)+'</p></div>';
+  if(det.culture)h+='<div class="sec-t">人文特征</div><div class="card"><p style="margin:0" class="muted">'+esc(det.culture)+'</p></div>';
+  if(det.admin&&det.admin.items&&det.admin.items.length){
+    h+='<div class="sec-t">行政区划</div><div class="card"><div class="tiny" style="margin-bottom:9px">'+
+      esc(det.admin.type||"")+(det.admin.note?' · '+esc(det.admin.note):'')+'</div><div class="adm">'+
+      det.admin.items.map(function(a){return '<div><span>'+esc(a[0])+'</span><span>'+esc(a[1])+'</span></div>';}).join("")+'</div></div>';}
+  if(det.timeline&&det.timeline.length){
+    h+='<div class="sec-t">历史进程</div><div class="card"><div class="tl">'+
+      det.timeline.map(function(t){return '<div class="ev"><div class="y">'+esc(t[0])+'</div><div class="x">'+esc(t[1])+'</div></div>';}).join("")+'</div></div>';}
+  if(det.issues&&det.issues.length){
+    h+='<div class="sec-t">主要社会命题</div><div class="card">'+
+      det.issues.map(function(i){return '<div class="iss"><h4>'+esc(i.t)+'</h4><p>'+esc(i.d)+'</p></div>';}).join("")+'</div>';}
+  if(det.recent&&det.recent.length){
+    h+='<div class="sec-t">近期重要事件</div><div class="card">'+
+      det.recent.map(function(i){return '<div class="iss" style="border-color:#c8dcf3"><h4>'+esc(i.t)+'</h4><p>'+esc(i.d)+'</p></div>';}).join("")+'</div>';}
+  if(det.travel&&((det.travel.spots||[]).length||(det.travel.routes||[]).length)){
+    h+='<div class="sec-t">旅行</div>';
+    if((det.travel.routes||[]).length)h+='<div style="margin-bottom:12px">'+det.travel.routes.map(function(r){
+      return '<div class="route"><b>'+esc(r.n)+'</b><p>'+esc(r.d)+'</p></div>';}).join("")+'</div>';
+    if((det.travel.spots||[]).length)h+='<div class="card">'+det.travel.spots.map(function(s){
+      return '<div class="spot"><b>'+esc(s.n)+'</b><p>'+esc(s.d)+'</p></div>';}).join("")+'</div>';}
+  if(det.cards&&det.cards.length){
+    h+='<div class="sec-t">代表事物</div><div class="ccards" id="ccW">'+det.cards.map(function(k,i){
+      return '<div class="cc"><div class="img" id="ci'+i+'"><span class="ph2">'+esc(k.t)+'</span></div><div class="bd">'+
+        '<div class="tp">'+esc(k.t)+'</div><h4>'+esc(k.n)+'</h4><p>'+esc(k.d)+'</p>'+
+        '<div style="margin-top:8px"><a href="https://zh.wikipedia.org/wiki/Special:Search?search='+encodeURIComponent(k.n)+'" target="_blank" rel="noopener" class="tiny">中文维基 ↗</a>'+
+        ' · <a href="https://en.wikipedia.org/wiki/'+encodeURIComponent(k.w)+'" target="_blank" rel="noopener" class="tiny">English ↗</a></div></div></div>';}).join("")+'</div>';}
+  h+='<div class="sec-t">深入了解</div><div class="card"><div class="row">'+
+    '<a class="btn" href="https://zh.wikipedia.org/wiki/'+encodeURIComponent(c.zh)+'" target="_blank" rel="noopener">中文维基百科 ↗</a>'+
+    '<a class="btn" href="https://en.wikipedia.org/wiki/'+encodeURIComponent(c.wiki||c.en)+'" target="_blank" rel="noopener">English Wikipedia ↗</a>'+
+    ((det.videos||[]).map(function(v){return '<a class="btn" href="https://www.youtube.com/results?search_query='+encodeURIComponent(v[1])+'" target="_blank" rel="noopener">▶ '+esc(v[0])+'</a>';}).join(""))+
+    '<a class="btn" href="https://www.youtube.com/results?search_query='+encodeURIComponent(c.en+" documentary")+'" target="_blank" rel="noopener">▶ 纪录片</a>'+
+    '</div><div id="wsum" class="small muted" style="margin-top:12px"></div></div>';
+  if(det.fact)h+='<div class="sec-t">冷知识</div><div class="card" style="border-color:#f0dcc4;background:var(--acbg)">'+
+    '<p style="margin:0;color:var(--ac2)">'+esc(det.fact)+'</p></div>';
+  if(!det.timeline||!det.timeline.length)
+    h+='<div class="card" style="border-style:dashed"><p class="small muted" style="margin:0">这个国家的深度内容（历史时间轴、行政区划、社会命题、旅行路线）还在陆续补充，每天的定时任务会自动补齐。上面的维基百科入口可以先用。</p></div>';
+  h+='<div class="row" style="margin:16px 0 26px"><button class="btn full" onclick="randomCountry()">换一个国家</button></div>';
+  document.getElementById("geoDetail").innerHTML=h;
+  (det.cards||[]).forEach(function(k,i){var el=document.getElementById("ci"+i);if(el)wikiImg(el,k.w);});
+  miniMap(document.getElementById("cmap"),c.id);
+  fetch("https://zh.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(c.zh))
+   .then(function(r){return r.ok?r.json():Promise.reject();}).then(function(j){
+     var el=document.getElementById("wsum");if(el&&j.extract)el.textContent=j.extract;}).catch(function(){});
+}
+/* ---- RETAIL (encrypted) ---- */
+function b64d(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a;}
+function unlock(pw,silent){
+  return fetch("data/retail.enc.json").then(function(r){return r.json();}).then(function(p){
+    var enc=new TextEncoder();
+    return crypto.subtle.importKey("raw",enc.encode(pw),{name:"PBKDF2"},false,["deriveKey"])
+     .then(function(base){return crypto.subtle.deriveKey({name:"PBKDF2",salt:b64d(p.salt),iterations:p.iter||150000,hash:"SHA-256"},
+        base,{name:"AES-GCM",length:256},false,["decrypt"]);})
+     .then(function(key){return crypto.subtle.decrypt({name:"AES-GCM",iv:b64d(p.iv)},key,b64d(p.ct));})
+     .then(function(buf){RETAIL=JSON.parse(new TextDecoder().decode(buf));
+       ST.set("rpw",pw);renderRetail();renderTodayRetail();return true;});
+  }).catch(function(){if(!silent)alert("密码不对，或数据文件还没上传。");
+    ST.set("rpw",null);return false;});
+}
 function renderRetail(){
-  var box=document.getElementById("retailBody");
-  if(!box||!(RETAIL.sections||[]).length)return;
-  var h='<div class="card" style="background:linear-gradient(155deg,#2a2030,#1a1520);border-color:#3a2c3d">'+
-    '<div class="eyebrow">零售动向 · 玩具 / 毛绒 / 文具</div>'+
-    '<h2 style="font-size:20px">本期更新</h2>'+
-    '<div class="tiny" style="margin-top:6px">数据截至 '+esc(RETAIL.updated||"—")+'</div>'+
-    '<p class="small muted" style="margin:10px 0 0">'+esc(RETAIL.note||"")+'</p></div>';
+  var box=document.getElementById("retailBody");if(!box)return;
+  if(!RETAIL){
+    box.innerHTML='<div class="card" style="text-align:center;padding:30px 18px">'+
+     '<div class="eyebrow">零售动向</div><h2 style="font-size:19px;margin:6px 0 8px">这个板块需要密码</h2>'+
+     '<p class="small muted" style="margin:0 0 16px">里面是玩具 / 毛绒 / 文具的品牌新品、IP 动向、展会与消费趋势，以及给采购的解读。</p>'+
+     '<input class="inp" id="rpw" type="password" placeholder="输入密码" autocomplete="current-password">'+
+     '<div class="row" style="margin-top:11px"><button class="btn pri full" id="rgo">解锁</button></div></div>';
+    var f=function(){unlock(document.getElementById("rpw").value||"");};
+    document.getElementById("rgo").onclick=f;
+    document.getElementById("rpw").onkeydown=function(e){if(e.key==="Enter")f();};
+    return;}
+  var h='<div class="card" style="background:linear-gradient(150deg,#f4f0fb,#fff 70%);border-color:#e6dff5">'+
+   '<div class="eyebrow">零售动向 · 玩具 / 毛绒 / 文具</div><h2 style="font-size:20px">本期更新</h2>'+
+   '<div class="tiny" style="margin-top:6px">数据截至 '+esc(RETAIL.updated||"—")+'</div>'+
+   '<p class="small muted" style="margin:10px 0 0">'+esc(RETAIL.note||"")+'</p></div>';
   (RETAIL.sections||[]).forEach(function(s){
     h+='<div class="sec-t">'+esc(s.title)+'</div>';
     if(s.lead)h+='<div class="tiny" style="margin:-4px 0 12px">'+esc(s.lead)+'</div>';
     h+='<div class="card">';
     (s.items||[]).forEach(function(it,ix){
       h+='<div class="ri"'+(ix===s.items.length-1?' style="margin-bottom:0"':'')+'>'+
-         (it.tag?'<span class="chip ac" style="margin-bottom:7px">'+esc(it.tag)+'</span>':'')+
-         '<h4>'+esc(it.t)+'</h4>'+
-         '<p>'+esc(it.body)+'</p>'+
-         (it.take?'<div class="take"><b>解读 · </b>'+esc(it.take)+'</div>':'')+
-         (it.src?'<div class="tiny"><a href="'+attr(it.src.u)+'" target="_blank" rel="noopener">'+esc(it.src.n)+' ↗</a></div>':'')+
-         '</div>';
-    });
-    h+='</div>';
-  });
-  if(RETAIL.archive&&RETAIL.archive.length){
-    h+='<div class="sec-t">往期归档</div><div class="card">'+RETAIL.archive.map(function(a){
-      return '<div class="ri"><h4>'+esc(a.t)+'</h4><p>'+esc(a.body)+'</p><div class="tiny">'+esc(a.date||"")+'</div></div>';
-    }).join("")+'</div>';
-  }
-  h+='<div style="height:24px"></div>';
-  box.innerHTML=h;
+       (it.tag?'<span class="chip ac" style="margin-bottom:7px">'+esc(it.tag)+'</span>':'')+
+       '<h4>'+esc(it.t)+'</h4><p>'+esc(it.body)+'</p>'+
+       (it.take?'<div class="take"><b>解读 · </b>'+esc(it.take)+'</div>':'')+
+       (it.src?'<div class="tiny"><a href="'+attr(it.src.u)+'" target="_blank" rel="noopener">'+esc(it.src.n)+' ↗</a></div>':'')+'</div>';});
+    h+='</div>';});
+  if((RETAIL.archive||[]).length){h+='<div class="sec-t">往期归档</div><div class="card">'+
+    RETAIL.archive.map(function(a){return '<div class="ri"><h4>'+esc(a.t)+'</h4><p>'+esc(a.body)+'</p><div class="tiny">'+esc(a.date||"")+'</div></div>';}).join("")+'</div>';}
+  h+='<div style="height:24px"></div>';box.innerHTML=h;
 }
-
-/* ============ boot ============ */
+/* ---- boot ---- */
 function boot(){
-  renderToday();
-  curScene=todayScene().id;renderPills();openScene(curScene);go("today");
-  renderGeoList();renderRetail();
-  sizeGlobe();drawGlobe();tick();loadLand();
-  window.addEventListener("resize",function(){sizeGlobe();drawGlobe();});
+  renderToday();curScene=todayScene().id;renderPills();openScene(curScene);go("today");
+  sizeMap();window.addEventListener("resize",function(){sizeMap();});
+  fetch("data/geo-index.json").then(function(r){return r.json();}).then(function(j){
+    GEOIDX=j;renderGeoList();renderToday();loadMap();
+  }).catch(function(){document.getElementById("geoGrid").innerHTML='<div class="empty">国家数据没能加载。如果你是直接双击本地文件打开的，请改用网址访问。</div>';});
+  var pw=ST.get("rpw",null);
+  if(pw)unlock(pw,true).then(function(ok){if(!ok)renderRetail();});else renderRetail();
 }
 boot();
 </script>
